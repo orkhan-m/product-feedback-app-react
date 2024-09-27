@@ -29,7 +29,8 @@ html {
   width: 82.5rem;
   border-radius: 1rem;
   display: flex;
-  float: right;
+  /* justify-content: space-between; */
+  /* float: right; */
 }
 
 .bulb-icon {
@@ -61,11 +62,19 @@ html {
   font-weight: 700;
 }
 
-/* .chevron-down {
+.btn-add-feedback {
   color: #ffffff;
-  font-size: 1.4rem;
   font-weight: 700;
-} */
+  margin-left: auto;
+  height: 4.4rem;
+  width: 15.8rem;
+  background-color: #ad1fea;
+  border-radius: 1rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 1.6rem;
+  border: none;
+}
 
 /* SECTION: Feedback Board */
 .feedback-board {

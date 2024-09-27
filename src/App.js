@@ -1,6 +1,7 @@
 import "./index.css";
 // import { useState } from "react";
 import bulbSvg from "./assets/bulb.svg";
+import dropdownIcon from "./assets/dropdown_icon.svg";
 
 export default function App() {
   return (
@@ -32,8 +33,12 @@ function Header() {
       <img class="bulb-icon" src={bulbSvg} alt="Bulb Icon" />
       <p class="nav-bar-suggestions">0 Suggestions</p>
       <p class="sort-by">
-        Sort by : <span class="dropdown-items">Most Upvotes &#x2304;</span>
+        Sort by :{" "}
+        <span class="dropdown-items">
+          Most Upvotes <img src={dropdownIcon} alt="Dropdown Icon"></img>
+        </span>
       </p>
+      <button class="btn-add-feedback">+ Add Feedback</button>
     </div>
   );
 }
