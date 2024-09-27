@@ -2,6 +2,9 @@ import "./index.css";
 // import { useState } from "react";
 import bulbSvg from "./assets/bulb.svg";
 import dropdownIcon from "./assets/dropdown_icon.svg";
+import manWithMagnifier from "./assets/man_with_magnifier.svg";
+
+const features = ["All", "UI", "UX", "Enhancement", "Bug", "Feature"];
 
 export default function App() {
   return (
@@ -16,12 +19,20 @@ export default function App() {
 
 function FeedbackBoard() {
   return (
-    <div class="feedback-board">
-      <div class="feedback-board-circle-one"></div>
-      <div class="feedback-board-circle-two"></div>
-      <div class="board-text">
-        <p class="board-main-text">Frontend Mentor</p>
-        <p class="board-secondary-text">Feedback Board</p>
+    <div class="side-boxes">
+      <div class="feedback-board">
+        <div class="feedback-board-circle-one"></div>
+        <div class="feedback-board-circle-two"></div>
+        <div class="board-text">
+          <p class="board-main-text">Frontend Mentor</p>
+          <p class="board-secondary-text">Feedback Board</p>
+        </div>
+      </div>
+      {/* NOTE Category Filter */}
+      <div class="category-filter">
+        {features.map((feature) => (
+          <div className="feedback-features-filter">{feature}</div>
+        ))}
       </div>
     </div>
   );

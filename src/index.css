@@ -12,6 +12,7 @@ html {
   font-size: 62.5%;
   margin-left: 16.5rem;
   margin-right: 16.5rem;
+  background-color: #f7f8fd;
 }
 
 .page-top {
@@ -76,6 +77,13 @@ html {
   border: none;
 }
 
+/* SECTION Side Boxes */
+
+.side-boxes {
+  display: flex;
+  flex-direction: column;
+}
+
 /* SECTION: Feedback Board */
 .feedback-board {
   position: relative;
@@ -131,4 +139,33 @@ html {
   opacity: 75%;
   font-size: 1.5rem;
   font-weight: 400;
+}
+
+/* SECTION Category Filter */
+
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  height: 16.6rem;
+  width: 25.5rem;
+  background-color: #ffffff;
+  margin-top: 2.4rem;
+  padding-top: 2.4rem;
+  padding-left: 2.4rem;
+  padding-bottom: 2.4rem;
+}
+
+.feedback-features-filter {
+  background-color: #f2f4ff;
+  border-radius: 1rem;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+  color: #4661e6;
+  font-weight: 600;
+  height: 3rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.6rem;
 }
