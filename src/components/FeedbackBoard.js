@@ -1,5 +1,3 @@
-const features = ["All", "UI", "UX", "Enhancement", "Bug", "Feature"];
-
 export default function FeedbackBoard() {
   return (
     <div className="side-boxes">
@@ -12,13 +10,6 @@ export default function FeedbackBoard() {
         </div>
       </div>
       {/* NOTE Category Filter */}
-      <div className="category-filter">
-        {features.map((feature) => (
-          <div key={feature} className="feedback-features-filter">
-            {feature}
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
