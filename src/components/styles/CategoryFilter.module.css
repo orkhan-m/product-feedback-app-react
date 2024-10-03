@@ -17,7 +17,7 @@
 .feedback_features_filter {
   background-color: #f2f4ff;
   border-radius: 1rem;
-  border-radius: 1rem;
+  border: none;
   font-size: 1.3rem;
   color: #4661e6;
   font-weight: 600;
@@ -26,4 +26,15 @@
   padding-right: 1.6rem;
   padding-top: 0.5rem;
   padding-bottom: 0.6rem;
+}
+
+.feedback_features_filter:hover {
+  cursor: pointer;
+  background-color: #cfd7ff;
+  color: #4661e6;
+}
+
+.feedback_features_filter:active {
+  background-color: #4661e6;
+  color: #ffffff;
 }

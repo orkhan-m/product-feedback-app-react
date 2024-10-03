@@ -1,0 +1,55 @@
+/* SECTION Feedback Board Main */
+.feedback_board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60rem;
+  width: 82.5rem;
+  background-color: #ffffff;
+  margin-top: 2.4rem;
+  border-radius: 1rem;
+}
+
+.feedbackboard_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 37.9rem;
+  width: 41rem;
+}
+
+.feedback_board_blank_icon {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feedbackboard_title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #3a4374;
+  margin-top: 5.326rem;
+}
+
+.feedbackboard_text {
+  font-size: 1.6rem;
+  color: #647196;
+  margin-top: 1.6rem;
+  text-align: center;
+}
+
+.btn_add_feedback {
+  color: #f2f4fe;
+  font-weight: 700;
+  height: 4.4rem;
+  width: 15.8rem;
+  background-color: #ad1fea;
+  border-radius: 1rem;
+  margin-top: auto;
+  border: none;
+}
+
+.btn_add_feedback:hover {
+  cursor: pointer;
+  background-color: #c75af6;
+}

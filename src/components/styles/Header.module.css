@@ -40,7 +40,7 @@
 }
 
 .btn_add_feedback {
-  color: #ffffff;
+  color: #f2f4fe;
   font-weight: 700;
   margin-left: auto;
   height: 4.4rem;
@@ -51,4 +51,9 @@
   margin-bottom: auto;
   margin-right: 1.6rem;
   border: none;
+}
+
+.btn_add_feedback:hover {
+  cursor: pointer;
+  background-color: #c75af6;
 }

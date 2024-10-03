@@ -6,9 +6,9 @@ export default function CategoryFilter() {
   return (
     <div className={styles.category_filter}>
       {features.map((feature) => (
-        <div key={feature} className={styles.feedback_features_filter}>
+        <button key={feature} className={styles.feedback_features_filter}>
           {feature}
-        </div>
+        </button>
       ))}
     </div>
   );
