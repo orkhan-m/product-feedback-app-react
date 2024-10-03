@@ -1,0 +1,55 @@
+/* SECTION: Feedback Board Icon */
+.feedback_board {
+  position: relative;
+  height: 13.7rem;
+  width: 25.5rem;
+  background: radial-gradient(
+    128.88% 128.88% at 103.9% -10.39%,
+    #e84d70 0%,
+    #a337f6 53.09%,
+    #28a7ed 100%
+  );
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.feedback_board_circle_one {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #7ad8fb;
+  opacity: 76.54%;
+  width: 19.2rem;
+  height: 19.2rem;
+  left: -9.65rem;
+  top: -13.65rem;
+  filter: blur(8.97rem);
+}
+
+.feedback_board_circle_two {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fbb57a;
+  width: 19.2rem;
+  height: 19.2rem;
+  top: 4.15rem;
+  left: 20.85rem;
+  filter: blur(8.97rem);
+}
+
+.board_text {
+  margin-top: 6.2rem;
+  margin-left: 2.4rem;
+}
+
+.board_main_text {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.board_secondary_text {
+  color: #ffffff;
+  opacity: 75%;
+  font-size: 1.5rem;
+  font-weight: 400;
+}

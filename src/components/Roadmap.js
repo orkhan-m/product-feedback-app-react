@@ -1,25 +1,27 @@
+import styles from "./styles/Roadmap.module.css";
+
 export default function Roadmap() {
   return (
-    <div class="roadmap">
-      <div class="roadmap-title-and-view">
-        <p class="roadmap-title">Roadmap</p>
-        <button class="roadmap-view">View</button>
+    <div className={styles.roadmap}>
+      <div className={styles.roadmap_title_and_view}>
+        <p className={styles.roadmap_title}>Roadmap</p>
+        <button className={styles.roadmap_view}>View</button>
       </div>
-      <div class="roadmap-list">
-        <div class="roadmap-list-planned">
-          <p class="roadmap-circle">&#9679;</p>
-          <p class="roadmap-name">Planned</p>
-          <p class="roadmap-number">0</p>
+      <div className={styles.roadmap_list}>
+        <div className={styles.roadmap_list_planned}>
+          <p className={styles.roadmap_circle}>&#9679;</p>
+          <p className={styles.roadmap_name}>Planned</p>
+          <p className={styles.roadmap_number}>0</p>
         </div>
-        <div class="roadmap-list-in-progress">
-          <p class="roadmap-circle">&#9679;</p>
-          <p class="roadmap-name">In-Progress</p>
-          <p class="roadmap-number">0</p>
+        <div className={styles.roadmap_list_in_progress}>
+          <p className={styles.roadmap_circle}>&#9679;</p>
+          <p className={styles.roadmap_name}>In-Progress</p>
+          <p className={styles.roadmap_number}>0</p>
         </div>
-        <div class="roadmap-list-live">
-          <p class="roadmap-circle">&#9679;</p>
-          <p class="roadmap-name">Live</p>
-          <p class="roadmap-number">0</p>
+        <div className={styles.roadmap_list_live}>
+          <p className={styles.roadmap_circle}>&#9679;</p>
+          <p className={styles.roadmap_name}>Live</p>
+          <p className={styles.roadmap_number}>0</p>
         </div>
       </div>
     </div>

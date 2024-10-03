@@ -1,0 +1,81 @@
+/* SECTION Roadmap */
+.roadmap {
+  display: flex;
+  flex-direction: column;
+  height: 17.8rem;
+  width: 25.5rem;
+  border-radius: 1rem;
+  margin-top: 2.4rem;
+  background-color: #ffffff;
+}
+
+.roadmap_title_and_view {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2.4rem;
+  margin-right: 2.4rem;
+  margin-top: 1.9rem;
+  margin-bottom: 2.4rem;
+  align-items: baseline;
+}
+
+.roadmap_title {
+  color: #3a4374;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.roadmap_view {
+  color: #4661e6;
+  opacity: 25%;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: underline;
+  border: none;
+}
+
+.roadmap_list {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.4rem;
+  gap: 0.8rem;
+}
+
+.roadmap_list_planned {
+  display: flex;
+  font-size: 1.6rem;
+}
+
+.roadmap_list_planned .roadmap_circle {
+  color: #f49f85;
+}
+
+.roadmap_list_in_progress {
+  display: flex;
+  font-size: 1.6rem;
+}
+
+.roadmap_list_in_progress .roadmap_circle {
+  color: #ad1fea;
+}
+
+.roadmap_list_live {
+  display: flex;
+  font-size: 1.6rem;
+}
+
+.roadmap_list_live .roadmap_circle {
+  color: #62bcfa;
+}
+
+.roadmap_name {
+  color: #647196;
+  margin-left: 1.6rem;
+}
+
+.roadmap_number {
+  color: #647196;
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: 2.4rem;
+}

@@ -1,6 +1,6 @@
 import "./index.css";
 
-import FeedbackBoard from "./components/FeedbackBoard";
+import FeedbackBoardIcon from "./components/FeedbackBoardIcon";
 import Header from "./components/Header";
 import CategoryFilter from "./components/CategoryFilter.js";
 import Roadmap from "./components/Roadmap.js";
@@ -10,7 +10,7 @@ export default function App() {
     <div>
       <div className="page-top">
         <div>
-          <FeedbackBoard />
+          <FeedbackBoardIcon />
           <CategoryFilter />
           <Roadmap />
         </div>

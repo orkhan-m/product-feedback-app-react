@@ -1,0 +1,54 @@
+/* SECTION NAVBAR */
+
+.nav_bar {
+  background-color: #373f68;
+  height: 7.2rem;
+  width: 82.5rem;
+  border-radius: 1rem;
+  display: flex;
+  /* justify-content: space-between; */
+  /* float: right; */
+}
+
+.bulb_icon {
+  height: 2.4rem;
+  width: 2.3rem;
+  margin-left: 2.4rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.nav_bar_suggestions {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 1.6rem;
+}
+
+.sort_by {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 3.8rem;
+}
+
+.dropdown_items {
+  font-weight: 700;
+}
+
+.btn_add_feedback {
+  color: #ffffff;
+  font-weight: 700;
+  margin-left: auto;
+  height: 4.4rem;
+  width: 15.8rem;
+  background-color: #ad1fea;
+  border-radius: 1rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 1.6rem;
+  border: none;
+}
