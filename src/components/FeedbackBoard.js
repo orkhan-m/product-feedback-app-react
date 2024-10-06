@@ -3,21 +3,19 @@ import styles from "./styles/FeedbackBoard.module.css";
 
 export default function FeedbackBoard() {
   return (
-    <div className={styles.feedback_board}>
-      <div className={styles.feedbackboard_content}>
+    <div className={styles.feedbackBoard}>
+      <div className={styles.feedbackboardContent}>
         <img
-          className={styles.feedback_board_blank_icon}
+          className={styles.feedbackBoardBlankIcon}
           src={feedbackBoardSvg}
           alt="Blank Icon"
         />
-        <h3 className={styles.feedbackboard_title}>
-          There is no feedback yet.
-        </h3>
-        <p className={styles.feedbackboard_text}>
+        <h3 className={styles.feedbackboardTitle}>There is no feedback yet.</h3>
+        <p className={styles.feedbackboardText}>
           Got a suggestion? Found a bug that needs to be squashed? We love
           hearing about new ideas to improve our app.
         </p>
-        <button className={styles.btn_add_feedback}>+ Add Feedback</button>
+        <button className={styles.btnAddFeedback}>+ Add Feedback</button>
       </div>
     </div>
   );

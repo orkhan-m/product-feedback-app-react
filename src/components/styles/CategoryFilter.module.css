@@ -1,6 +1,6 @@
 /* SECTION Category Filter */
 
-.category_filter {
+.categoryFilter {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
@@ -14,7 +14,7 @@
   margin-top: 2.4rem;
 }
 
-.feedback_features_filter {
+.feedbackFeaturesFilter {
   background-color: #f2f4ff;
   border-radius: 1rem;
   border: none;
@@ -28,13 +28,13 @@
   padding-bottom: 0.6rem;
 }
 
-.feedback_features_filter:hover {
+.feedbackFeaturesFilter:hover {
   cursor: pointer;
   background-color: #cfd7ff;
   color: #4661e6;
 }
 
-.feedback_features_filter:active {
+.feedbackFeaturesFilter:active {
   background-color: #4661e6;
   color: #ffffff;
 }

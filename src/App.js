@@ -9,7 +9,7 @@ import FeedbackBoard from "./components/FeedbackBoard.js";
 export default function App() {
   return (
     <div>
-      <div className="page-top">
+      <div className="pageTop">
         <div>
           <FeedbackBoardIcon />
           <CategoryFilter />
