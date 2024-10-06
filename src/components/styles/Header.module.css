@@ -1,6 +1,6 @@
 /* SECTION NAVBAR */
 
-.nav_bar {
+.navBar {
   background-color: #373f68;
   height: 7.2rem;
   width: 82.5rem;
@@ -10,7 +10,7 @@
   /* float: right; */
 }
 
-.bulb_icon {
+.bulbIcon {
   height: 2.4rem;
   width: 2.3rem;
   margin-left: 2.4rem;
@@ -18,7 +18,7 @@
   margin-bottom: auto;
 }
 
-.nav_bar_suggestions {
+.navBarSuggestions {
   color: #ffffff;
   font-size: 1.8rem;
   font-weight: 700;
@@ -27,7 +27,7 @@
   margin-left: 1.6rem;
 }
 
-.sort_by {
+.sortBy {
   color: #ffffff;
   font-size: 1.4rem;
   margin-top: auto;
@@ -35,11 +35,11 @@
   margin-left: 3.8rem;
 }
 
-.dropdown_items {
+.dropdownItems {
   font-weight: 700;
 }
 
-.btn_add_feedback {
+.btnAddFeedback {
   color: #f2f4fe;
   font-weight: 700;
   margin-left: auto;
@@ -53,7 +53,7 @@
   border: none;
 }
 
-.btn_add_feedback:hover {
+.btnAddFeedback:hover {
   cursor: pointer;
   background-color: #c75af6;
 }
