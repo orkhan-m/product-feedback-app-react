@@ -33,11 +33,11 @@ export default function Header() {
       </p>
       {displayDropdown && (
         <div className={styles.sortDropdown}>
-          <ui>
+          <ul>
             {dropdownSelections.map((selection) => (
               <li key={selection}>{selection}</li>
             ))}
-          </ui>
+          </ul>
         </div>
       )}
       <button className={styles.btnAddFeedback}>+ Add Feedback</button>

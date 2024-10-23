@@ -70,5 +70,15 @@
   width: 25.5rem;
   height: 19.2rem;
   border-radius: 1rem;
+  padding-left: 2.4rem;
   background-color: white;
+  box-shadow: 0px 10px 40px -7px rgba(55, 63, 104, 0.350492);
+}
+
+.sortDropdown ul li {
+  color: #647196;
+  list-style-type: none;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  font-size: 1.6rem;
 }
