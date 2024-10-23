@@ -1,6 +1,7 @@
 /* SECTION NAVBAR */
 
 .navBar {
+  position: relative;
   background-color: #373f68;
   height: 7.2rem;
   width: 82.5rem;
@@ -35,6 +36,10 @@
   margin-left: 3.8rem;
 }
 
+.sortBy:hover {
+  cursor: pointer;
+}
+
 .dropdownItems {
   font-weight: 700;
 }
@@ -56,4 +61,14 @@
 .btnAddFeedback:hover {
   cursor: pointer;
   background-color: #c75af6;
+}
+
+.sortDropdown {
+  position: absolute;
+  top: 8.8rem;
+  left: 22rem;
+  width: 25.5rem;
+  height: 19.2rem;
+  border-radius: 1rem;
+  background-color: white;
 }
