@@ -70,15 +70,31 @@
   width: 25.5rem;
   height: 19.2rem;
   border-radius: 1rem;
-  padding-left: 2.4rem;
   background-color: white;
   box-shadow: 0px 10px 40px -7px rgba(55, 63, 104, 0.350492);
 }
 
 .sortDropdown ul li {
+  position: relative;
   color: #647196;
   list-style-type: none;
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
+  padding-left: 2.4rem;
   font-size: 1.6rem;
+}
+
+.sortDropdown ul li:not(:last-child) {
+  border-bottom: 0.1rem solid rgba(58, 67, 116, 0.15);
+}
+
+.sortDropdown ul li:hover {
+  color: #ad1fea;
+  cursor: pointer;
+}
+
+.tickIcon {
+  position: absolute;
+  right: 2.4rem;
+  top: 1.989rem;
 }
