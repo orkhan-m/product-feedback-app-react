@@ -28,13 +28,13 @@
   padding-bottom: 0.6rem;
 }
 
+.feedbackFeaturesFilterSelected {
+  background-color: #4661e6;
+  color: #ffffff;
+}
+
 .feedbackFeaturesFilter:hover {
   cursor: pointer;
   background-color: #cfd7ff;
   color: #4661e6;
-}
-
-.feedbackFeaturesFilter:active {
-  background-color: #4661e6;
-  color: #ffffff;
 }
