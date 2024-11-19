@@ -34,6 +34,19 @@
   background-color: #4661e6;
 }
 
+.likesLiked {
+  display: flex;
+  flex-direction: column;
+  width: 4rem;
+  height: 5.3rem;
+  background-color: #4661e6;
+  border: none;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
 .likes:active .increaseLikesBtn {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%)
     hue-rotate(360deg) brightness(103%) contrast(103%);
@@ -45,6 +58,11 @@
 
 .numberOfLikes {
   color: #3a4374;
+  font-weight: 700;
+}
+
+.numberOfLikesLiked {
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -82,6 +100,13 @@
 }
 
 .numberOfCommentsDigit {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.numberOfCommentsDigitZero {
+  color: #3a4374;
+  opacity: 0.5;
   font-size: 1.6rem;
   font-weight: 800;
 }
