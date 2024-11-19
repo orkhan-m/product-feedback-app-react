@@ -1,0 +1,112 @@
+/* SECTION Feedback Unit */
+.feedbackUnit {
+  border-radius: 1rem;
+  width: 82.5rem;
+  height: 15.1rem;
+  background-color: #ffffff;
+  margin-top: 2.4rem;
+}
+
+.content {
+  display: flex;
+  padding: 2.8rem 3.2rem;
+  align-items: center;
+}
+
+.likes {
+  display: flex;
+  flex-direction: column;
+  width: 4rem;
+  height: 5.3rem;
+  background-color: #f2f4fe;
+  border: none;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.likes:hover {
+  background-color: #cfd7ff;
+}
+
+.likes:active {
+  background-color: #4661e6;
+}
+
+.likesLiked {
+  display: flex;
+  flex-direction: column;
+  width: 4rem;
+  height: 5.3rem;
+  background-color: #4661e6;
+  border: none;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.likes:active .increaseLikesBtn {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%)
+    hue-rotate(360deg) brightness(103%) contrast(103%);
+}
+
+.likes:active .numberOfLikes {
+  color: #ffffff;
+}
+
+.numberOfLikes {
+  color: #3a4374;
+  font-weight: 700;
+}
+
+.numberOfLikesLiked {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.feebackText {
+  margin-left: 4rem;
+}
+
+.feedbackUnitTitle {
+  color: #3a4374;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.feedbackUnitText {
+  color: #647196;
+  font-size: 1.6rem;
+  margin-top: 0.4rem;
+}
+
+.feedbackUnitCategory {
+  border-radius: 1rem;
+  color: #4661e6;
+  background-color: #f2f4ff;
+  margin-top: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 0.5rem 1.6rem 0.6rem 1.6rem;
+  width: min-content;
+}
+
+.numberOfComments {
+  display: flex;
+  margin-left: auto;
+  gap: 0.8rem;
+}
+
+.numberOfCommentsDigit {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.numberOfCommentsDigitZero {
+  color: #3a4374;
+  opacity: 0.5;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
