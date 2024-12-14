@@ -28,7 +28,14 @@ export default function Header({
       <p className={styles.navBarSuggestions}>
         {feedbackData.length} Suggestions
       </p>
-      <p className={styles.sortBy} onClick={toggleDropdown}>
+      <p
+        className={
+          !displayDropdown && feedbackData.length
+            ? styles.sortBy
+            : styles.sortByDisabled
+        }
+        onClick={feedbackData.length ? toggleDropdown : null}
+      >
         Sort by :{" "}
         <span className={styles.dropdownItems}>
           {selectedSortOption}{" "}

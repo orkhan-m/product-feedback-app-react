@@ -36,6 +36,16 @@
   margin-left: 3.8rem;
 }
 
+.sortByDisabled {
+  color: #f2f4fe;
+  opacity: 75%;
+  font-size: 1.4rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 3.8rem;
+  cursor: pointer;
+}
+
 .sortBy:hover {
   cursor: pointer;
 }
