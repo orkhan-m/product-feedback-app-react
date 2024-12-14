@@ -3,9 +3,12 @@ import styles from "./styles/FeedbackUnit.module.css";
 import increaseLikes from "../assets/increase_likes.svg";
 import increaseLikesWhite from "../assets/increase_likes_white.svg";
 import commentBubble from "../assets/comment_bubble.svg";
-import { feedbackData } from "../data/feedbackData";
 
-export default function FeedbackUnit({ selectedCategory, selectedSortOption }) {
+export default function FeedbackUnit({
+  selectedCategory,
+  selectedSortOption,
+  feedbackData,
+}) {
   const [initialFeedbackData, setInitialFeedbackData] = useState(feedbackData);
 
   function handleLikeClicks(index) {

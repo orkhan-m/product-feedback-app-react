@@ -4,9 +4,13 @@ import dropdownIcon from "../assets/dropdown_icon.svg";
 import dropdownIconReversed from "../assets/dropdown_icon_reversed.svg";
 import tickIcon from "../assets/tick_icon.svg";
 import styles from "./styles/Header.module.css";
-import { dropdownSelections } from "../data/sortDropDownSelection";
 
-export default function Header({ selectedSortOption, setSelectedSortOption }) {
+export default function Header({
+  selectedSortOption,
+  setSelectedSortOption,
+  dropdownSelections,
+  feedbackData,
+}) {
   const [displayDropdown, setDisplayDropdown] = useState(false);
 
   function toggleDropdown() {
@@ -21,7 +25,9 @@ export default function Header({ selectedSortOption, setSelectedSortOption }) {
   return (
     <div className={styles.navBar}>
       <img className={styles.bulbIcon} src={bulbSvg} alt="Bulb Icon" />
-      <p className={styles.navBarSuggestions}>0 Suggestions</p>
+      <p className={styles.navBarSuggestions}>
+        {feedbackData.length} Suggestions
+      </p>
       <p className={styles.sortBy} onClick={toggleDropdown}>
         Sort by :{" "}
         <span className={styles.dropdownItems}>

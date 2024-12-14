@@ -8,6 +8,7 @@ import Roadmap from "./components/Roadmap.js";
 import FeedbackBoard from "./components/FeedbackBoard.js";
 import FeedbackUnit from "./components/FeedbackUnit.js";
 import { feedbackData } from "./data/feedbackData";
+import { dropdownSelections } from "./data/sortDropDownSelection";
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -28,11 +29,14 @@ export default function App() {
           <Header
             selectedSortOption={selectedSortOption}
             setSelectedSortOption={setSelectedSortOption}
+            dropdownSelections={dropdownSelections}
+            feedbackData={feedbackData}
           />
           {feedbackData.length ? (
             <FeedbackUnit
               selectedCategory={selectedCategory}
               selectedSortOption={selectedSortOption}
+              feedbackData={feedbackData}
             />
           ) : (
             <FeedbackBoard />
