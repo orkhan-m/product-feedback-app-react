@@ -5,7 +5,7 @@ import increaseLikesWhite from "../assets/increase_likes_white.svg";
 import commentBubble from "../assets/comment_bubble.svg";
 import { feedbackData } from "../data/feedbackData";
 
-export default function FeedbackUnit({ selectedCategory }) {
+export default function FeedbackUnit({ selectedCategory, selectedSortOption }) {
   const [initialFeedbackData, setInitialFeedbackData] = useState(feedbackData);
 
   function handleLikeClicks(index) {
@@ -29,6 +29,17 @@ export default function FeedbackUnit({ selectedCategory }) {
           (data) =>
             selectedCategory === "All" || data.category === selectedCategory
         )
+        .sort((a, b) => {
+          if (selectedSortOption === "Most Upvotes") {
+            return b.likes - a.likes;
+          } else if (selectedSortOption === "Least Upvotes") {
+            return a.likes - b.likes;
+          } else if (selectedSortOption === "Most Comments") {
+            return b.comments - a.comments;
+          } else if (selectedSortOption === "Least Comments") {
+            return a.comments - b.comments;
+          }
+        })
         .map((data, index) => (
           <div key={index} className={styles.feedbackUnit}>
             <div className={styles.content}>

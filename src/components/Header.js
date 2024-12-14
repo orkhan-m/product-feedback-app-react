@@ -4,24 +4,17 @@ import dropdownIcon from "../assets/dropdown_icon.svg";
 import dropdownIconReversed from "../assets/dropdown_icon_reversed.svg";
 import tickIcon from "../assets/tick_icon.svg";
 import styles from "./styles/Header.module.css";
+import { dropdownSelections } from "../data/sortDropDownSelection";
 
-const dropdownSelections = [
-  "Most Upvotes",
-  "Least Upvotes",
-  "Most Comments",
-  "Least Comments",
-];
-
-export default function Header() {
+export default function Header({ selectedSortOption, setSelectedSortOption }) {
   const [displayDropdown, setDisplayDropdown] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("Most Upvotes");
 
   function toggleDropdown() {
     setDisplayDropdown((prevState) => !prevState); // Toggle dropdown visibility
   }
 
   function handleSelection(selection) {
-    setSelectedOption(selection);
+    setSelectedSortOption(selection);
     setDisplayDropdown(false);
   }
 
@@ -32,7 +25,7 @@ export default function Header() {
       <p className={styles.sortBy} onClick={toggleDropdown}>
         Sort by :{" "}
         <span className={styles.dropdownItems}>
-          {selectedOption}{" "}
+          {selectedSortOption}{" "}
           <img
             src={displayDropdown ? dropdownIconReversed : dropdownIcon}
             alt={displayDropdown ? "Dropdown Icon Reversed" : "Dropdown Icon"}
@@ -45,7 +38,7 @@ export default function Header() {
             {dropdownSelections.map((selection) => (
               <li key={selection} onClick={() => handleSelection(selection)}>
                 {selection}
-                {selection === selectedOption && (
+                {selection === selectedSortOption && (
                   <img
                     src={tickIcon}
                     alt="Selected"

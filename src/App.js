@@ -11,6 +11,7 @@ import { feedbackData } from "./data/feedbackData";
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedSortOption, setSelectedSortOption] = useState("Most Upvotes");
 
   return (
     <div>
@@ -24,10 +25,15 @@ export default function App() {
           <Roadmap />
         </div>
         <div>
-          <Header />
-          {console.log(feedbackData.length)}
+          <Header
+            selectedSortOption={selectedSortOption}
+            setSelectedSortOption={setSelectedSortOption}
+          />
           {feedbackData.length ? (
-            <FeedbackUnit selectedCategory={selectedCategory} />
+            <FeedbackUnit
+              selectedCategory={selectedCategory}
+              selectedSortOption={selectedSortOption}
+            />
           ) : (
             <FeedbackBoard />
           )}
