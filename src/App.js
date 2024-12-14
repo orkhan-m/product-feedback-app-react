@@ -1,4 +1,5 @@
 import "./index.css";
+import { useState } from "react";
 
 import FeedbackBoardIcon from "./components/FeedbackBoardIcon";
 import Header from "./components/Header";
@@ -9,18 +10,27 @@ import FeedbackUnit from "./components/FeedbackUnit.js";
 import { feedbackData } from "./data/feedbackData";
 
 export default function App() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   return (
     <div>
       <div className="pageTop">
         <div>
           <FeedbackBoardIcon />
-          <CategoryFilter />
+          <CategoryFilter
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
           <Roadmap />
         </div>
         <div>
           <Header />
           {console.log(feedbackData.length)}
-          {feedbackData.length ? <FeedbackUnit /> : <FeedbackBoard />}
+          {feedbackData.length ? (
+            <FeedbackUnit selectedCategory={selectedCategory} />
+          ) : (
+            <FeedbackBoard />
+          )}
         </div>
       </div>
     </div>

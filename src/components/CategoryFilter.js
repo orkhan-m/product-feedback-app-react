@@ -1,30 +1,30 @@
 import { useState } from "react";
 import styles from "./styles/CategoryFilter.module.css";
+import { features } from "../data/categoryFilterData";
 
-const features = ["All", "UI", "UX", "Enhancement", "Bug", "Feature"];
-
-export default function CategoryFilter() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
+export default function CategoryFilter({
+  selectedCategory,
+  setSelectedCategory,
+}) {
   function handleSelection(feature) {
     setSelectedCategory(feature);
   }
 
   return (
     <div className={styles.categoryFilter}>
-      {features.map((feature) => (
+      {features.map((features) => (
         <button
-          key={feature}
+          key={features}
           className={`${styles.feedbackFeaturesFilter} ${
-            selectedCategory === feature
+            selectedCategory === features
               ? styles.feedbackFeaturesFilterSelected
               : ""
           }`}
           onClick={() => {
-            handleSelection(feature);
+            handleSelection(features);
           }}
         >
-          {feature}
+          {features}
         </button>
       ))}
     </div>
