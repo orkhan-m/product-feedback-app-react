@@ -1,11 +1,19 @@
 import styles from "./styles/Roadmap.module.css";
 
-export default function Roadmap() {
+export default function Roadmap({ feedbackData }) {
   return (
     <div className={styles.roadmap}>
       <div className={styles.roadmapTitleAndView}>
         <p className={styles.roadmapTitle}>Roadmap</p>
-        <button className={styles.roadmapView}>View</button>
+        <button
+          className={
+            feedbackData.length
+              ? styles.roadmapView
+              : styles.roadmapViewDisabled
+          }
+        >
+          View
+        </button>
       </div>
       <div className={styles.roadmapList}>
         <div className={styles.roadmapListPlanned}>

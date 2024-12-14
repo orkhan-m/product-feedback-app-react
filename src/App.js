@@ -23,7 +23,7 @@ export default function App() {
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
           />
-          <Roadmap />
+          <Roadmap feedbackData={feedbackData} />
         </div>
         <div>
           <Header

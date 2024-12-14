@@ -25,13 +25,29 @@
   font-weight: 700;
 }
 
-.roadmapView {
+.roadmapViewDisabled {
   color: #4661e6;
   opacity: 25%;
+  background-color: #ffffff;
   font-size: 1.3rem;
   font-weight: 600;
   text-decoration: underline;
   border: none;
+}
+
+.roadmapView {
+  color: #4661e6;
+  /* opacity: 25%; */
+  background-color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+}
+
+.roadmapView:hover {
+  color: #8397f8;
 }
 
 .roadmapList {
