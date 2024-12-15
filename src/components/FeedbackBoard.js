@@ -1,7 +1,7 @@
 import feedbackBoardSvg from "../assets/feedback_board_blank.svg";
 import styles from "./styles/FeedbackBoard.module.css";
 
-export default function FeedbackBoard() {
+export default function FeedbackBoard({ setAddFeedbackView }) {
   return (
     <div className={styles.feedbackBoard}>
       <div className={styles.feedbackboardContent}>
@@ -15,7 +15,12 @@ export default function FeedbackBoard() {
           Got a suggestion? Found a bug that needs to be squashed? We love
           hearing about new ideas to improve our app.
         </p>
-        <button className={styles.btnAddFeedback}>+ Add Feedback</button>
+        <button
+          className={styles.btnAddFeedback}
+          onClick={() => setAddFeedbackView((prev) => !prev)}
+        >
+          + Add Feedback
+        </button>
       </div>
     </div>
   );

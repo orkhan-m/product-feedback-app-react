@@ -10,6 +10,7 @@ export default function Header({
   setSelectedSortOption,
   dropdownSelections,
   feedbackData,
+  setAddFeedbackView,
 }) {
   const [displayDropdown, setDisplayDropdown] = useState(false);
 
@@ -63,7 +64,12 @@ export default function Header({
           </ul>
         </div>
       )}
-      <button className={styles.btnAddFeedback}>+ Add Feedback</button>
+      <button
+        className={styles.btnAddFeedback}
+        onClick={() => setAddFeedbackView((prev) => !prev)}
+      >
+        + Add Feedback
+      </button>
     </div>
   );
 }
