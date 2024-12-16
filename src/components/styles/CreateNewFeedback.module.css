@@ -252,8 +252,16 @@
   background-color: #3a4374;
 }
 
+.cancelBtn:hover {
+  background-color: #656ea3;
+}
+
 .addFeedbackBtn {
   background-color: #ad1fea;
+}
+
+.addFeedbackBtn:hover {
+  background-color: #c75af6;
 }
 
 .textErrorMessage {
