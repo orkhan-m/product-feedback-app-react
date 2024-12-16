@@ -8,13 +8,13 @@ export default function FeedbackUnit({
   selectedCategory,
   selectedSortOption,
   feedbackData,
+  setFeedbackDataArray,
 }) {
-  const [initialFeedbackData, setInitialFeedbackData] = useState(feedbackData);
-
   function handleLikeClicks(index) {
-    setInitialFeedbackData((prevData) =>
-      prevData.map((item, i) =>
-        i === index
+    console.log("This is index:" + index);
+    setFeedbackDataArray((prevData) =>
+      prevData.map((item, _) =>
+        item.index === index
           ? {
               ...item,
               likes: item.likes + (item.liked ? -1 : 1),
@@ -27,7 +27,7 @@ export default function FeedbackUnit({
 
   return (
     <>
-      {initialFeedbackData
+      {feedbackData
         .filter(
           (data) =>
             selectedCategory === "All" || data.category === selectedCategory
@@ -43,12 +43,12 @@ export default function FeedbackUnit({
             return a.comments - b.comments;
           }
         })
-        .map((data, index) => (
-          <div key={index} className={styles.feedbackUnit}>
+        .map((data, _) => (
+          <div key={data.index} className={styles.feedbackUnit}>
             <div className={styles.content}>
               <button
                 className={data.liked ? styles.likesLiked : styles.likes}
-                onClick={() => handleLikeClicks(index)}
+                onClick={() => handleLikeClicks(data.index)}
               >
                 <img
                   src={data.liked ? increaseLikesWhite : increaseLikes}

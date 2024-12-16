@@ -43,8 +43,6 @@ export default function CreateNewFeedback({
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log("1");
-
     let valid = true;
 
     if (title.trim() === "") {
@@ -54,8 +52,6 @@ export default function CreateNewFeedback({
       setIsTitleEmpty(false);
     }
 
-    console.log("2");
-
     if (detail.trim() === "") {
       setIsDetailEmpty(true);
       valid = false;
@@ -63,11 +59,7 @@ export default function CreateNewFeedback({
       setIsDetailEmpty(false);
     }
 
-    console.log("3");
-
     if (!valid) return;
-
-    console.log("4");
 
     const newFeedback = {
       index: feedbackData.length + 1,
@@ -78,8 +70,6 @@ export default function CreateNewFeedback({
       category: selectedCategory,
     };
     onAddFeedback(newFeedback);
-
-    console.log("5");
 
     setAddFeedbackView(false);
   }

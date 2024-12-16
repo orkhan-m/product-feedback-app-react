@@ -46,6 +46,7 @@ export default function App() {
                 selectedCategory={selectedCategory}
                 selectedSortOption={selectedSortOption}
                 feedbackData={feedbackDataArray}
+                setFeedbackDataArray={setFeedbackDataArray}
               />
             ) : (
               <FeedbackBoard setAddFeedbackView={setAddFeedbackView} />
