@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import styles from "./styles/FeedbackUnit.module.css";
 import increaseLikes from "../assets/increase_likes.svg";
 import increaseLikesWhite from "../assets/increase_likes_white.svg";
@@ -41,6 +41,8 @@ export default function FeedbackUnit({
             return b.comments - a.comments;
           } else if (selectedSortOption === "Least Comments") {
             return a.comments - b.comments;
+          } else {
+            return 0;
           }
         })
         .map((data, _) => (

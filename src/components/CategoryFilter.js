@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import styles from "./styles/CategoryFilter.module.css";
 import { features } from "../data/categoryFilterData";
 
