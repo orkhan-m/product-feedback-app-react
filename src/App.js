@@ -15,6 +15,11 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedSortOption, setSelectedSortOption] = useState("Most Upvotes");
   const [addFeedbackView, setAddFeedbackView] = useState(false);
+  const [feedbackDataArray, setFeedbackDataArray] = useState(feedbackData);
+
+  function addFeedback(feedback) {
+    setFeedbackDataArray([...feedbackDataArray, feedback]);
+  }
 
   if (!addFeedbackView) {
     return (
@@ -26,21 +31,21 @@ export default function App() {
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
             />
-            <Roadmap feedbackData={feedbackData} />
+            <Roadmap feedbackData={feedbackDataArray} />
           </div>
           <div>
             <Header
               selectedSortOption={selectedSortOption}
               setSelectedSortOption={setSelectedSortOption}
               dropdownSelections={dropdownSelections}
-              feedbackData={feedbackData}
+              feedbackData={feedbackDataArray}
               setAddFeedbackView={setAddFeedbackView}
             />
             {feedbackData.length ? (
               <FeedbackUnit
                 selectedCategory={selectedCategory}
                 selectedSortOption={selectedSortOption}
-                feedbackData={feedbackData}
+                feedbackData={feedbackDataArray}
               />
             ) : (
               <FeedbackBoard setAddFeedbackView={setAddFeedbackView} />
@@ -50,6 +55,13 @@ export default function App() {
       </div>
     );
   } else {
-    return <CreateNewFeedback setAddFeedbackView={setAddFeedbackView} />;
+    return (
+      <CreateNewFeedback
+        setAddFeedbackView={setAddFeedbackView}
+        feedbackData={feedbackDataArray}
+        setFeedbackData={setFeedbackDataArray}
+        onAddFeedback={addFeedback}
+      />
+    );
   }
 }

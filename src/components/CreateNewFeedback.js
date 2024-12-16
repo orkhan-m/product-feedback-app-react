@@ -8,11 +8,27 @@ import { useState } from "react";
 
 const categories = ["Feature", "UI", "UX", "Enhancement", "Bug"];
 
-export default function CreateNewFeedback({ setAddFeedbackView }) {
+export default function CreateNewFeedback({
+  setAddFeedbackView,
+  feedbackData,
+  onAddFeedback,
+}) {
   const [selectedCategory, setSelectedCategory] = useState("Feature");
   const [title, setTitle] = useState("");
   const [detail, setDetail] = useState("");
   const [categorySelect, setCategorySelect] = useState(false);
+  const [isTitleEmpty, setIsTitleEmpty] = useState(false);
+  const [isDetailEmpty, setIsDetailEmpty] = useState(false);
+
+  function onInputTitleChange(e) {
+    setTitle(e.target.value);
+    setIsTitleEmpty(false);
+  }
+
+  function onInputDetailChange(e) {
+    setDetail(e.target.value);
+    setIsDetailEmpty(false);
+  }
 
   function cancelBtn(e) {
     e.preventDefault();
@@ -20,11 +36,62 @@ export default function CreateNewFeedback({ setAddFeedbackView }) {
     setDetail("");
     setSelectedCategory("Feature");
     setCategorySelect(false);
+    setIsTitleEmpty(false);
+    setIsDetailEmpty(false);
   }
 
-  function addFeedbackBtn(e) {
+  function handleSubmit(e) {
     e.preventDefault();
+
+    console.log("1");
+
+    let valid = true;
+
+    if (title.trim() === "") {
+      setIsTitleEmpty(true);
+      valid = false;
+    } else {
+      setIsTitleEmpty(false);
+    }
+
+    console.log("2");
+
+    if (detail.trim() === "") {
+      setIsDetailEmpty(true);
+      valid = false;
+    } else {
+      setIsDetailEmpty(false);
+    }
+
+    console.log("3");
+
+    if (!valid) return;
+
+    console.log("4");
+
+    const newFeedback = {
+      index: feedbackData.length + 1,
+      title,
+      text: detail,
+      likes: 0,
+      comments: 0,
+      category: selectedCategory,
+    };
+    onAddFeedback(newFeedback);
+
+    console.log("5");
+
+    setAddFeedbackView(false);
   }
+
+  // {
+  //   index: 6,
+  //   title: "Preview images not loading",
+  //   text: "Challenge preview images are missing when you apply a filter.",
+  //   likes: 3,
+  //   comments: 0,
+  //   category: "Bug",
+  // },
 
   return (
     <div className={styles.mainCanvas}>
@@ -43,18 +110,25 @@ export default function CreateNewFeedback({ setAddFeedbackView }) {
         <div className={styles.feedbackCircle}>
           <img src={plusIcon} alt="Plus Icon" />
         </div>
-        <form onClick={(e) => e.preventDefault()}>
+        <form onSubmit={handleSubmit}>
           <label className={styles.mainLabel}>Create New Feedback</label>
           <label className={styles.titleLabel}>Feedback Title</label>
           <label className={styles.titleDescription}>
             Add a short, descriptive headline
           </label>
           <input
-            className={styles.titleInput}
+            className={
+              !isTitleEmpty
+                ? styles.titleInput
+                : `${styles.inputError} ${styles.titleInput}`
+            }
             type="text"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={onInputTitleChange}
           />
+          {isTitleEmpty && (
+            <p className={styles.textErrorMessage}>Can't be empty</p>
+          )}
           <label className={styles.categoryLabel}>Category</label>
           <label className={styles.titleDescription}>
             Choose a category for your feedback
@@ -105,11 +179,19 @@ export default function CreateNewFeedback({ setAddFeedbackView }) {
             etc.
           </label>
           <textarea
-            className={styles.feedbackDetailInput}
+            // className={styles.feedbackDetailInput}
+            className={
+              !isDetailEmpty
+                ? styles.feedbackDetailInput
+                : `${styles.inputError} ${styles.feedbackDetailInput}`
+            }
             type="text"
             value={detail}
-            onChange={(e) => setDetail(e.target.value)}
+            onChange={onInputDetailChange}
           />
+          {isDetailEmpty && (
+            <p className={styles.textErrorMessage}>Can't be empty</p>
+          )}
           <div className={styles.buttonContainer}>
             <button
               className={`${styles.cancelBtn} ${styles.btn}`}
@@ -119,7 +201,8 @@ export default function CreateNewFeedback({ setAddFeedbackView }) {
             </button>
             <button
               className={`${styles.addFeedbackBtn} ${styles.btn}`}
-              onClick={addFeedbackBtn}
+              // onSubmit={handleSubmit}
+              type="submit"
             >
               Add Feedback
             </button>
