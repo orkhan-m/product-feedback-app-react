@@ -7,42 +7,61 @@ import CategoryFilter from "./components/CategoryFilter.js";
 import Roadmap from "./components/Roadmap.js";
 import FeedbackBoard from "./components/FeedbackBoard.js";
 import FeedbackUnit from "./components/FeedbackUnit.js";
+import CreateNewFeedback from "./components/CreateNewFeedback.js";
 import { feedbackData } from "./data/feedbackData";
 import { dropdownSelections } from "./data/sortDropDownSelection";
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedSortOption, setSelectedSortOption] = useState("Most Upvotes");
+  const [addFeedbackView, setAddFeedbackView] = useState(false);
+  const [feedbackDataArray, setFeedbackDataArray] = useState(feedbackData);
 
-  return (
-    <div>
-      <div className="pageTop">
-        <div>
-          <FeedbackBoardIcon />
-          <CategoryFilter
-            selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-          />
-          <Roadmap feedbackData={feedbackData} />
-        </div>
-        <div>
-          <Header
-            selectedSortOption={selectedSortOption}
-            setSelectedSortOption={setSelectedSortOption}
-            dropdownSelections={dropdownSelections}
-            feedbackData={feedbackData}
-          />
-          {feedbackData.length ? (
-            <FeedbackUnit
+  function addFeedback(feedback) {
+    setFeedbackDataArray([...feedbackDataArray, feedback]);
+  }
+
+  if (!addFeedbackView) {
+    return (
+      <div>
+        <div className="pageTop">
+          <div>
+            <FeedbackBoardIcon />
+            <CategoryFilter
               selectedCategory={selectedCategory}
-              selectedSortOption={selectedSortOption}
-              feedbackData={feedbackData}
+              setSelectedCategory={setSelectedCategory}
             />
-          ) : (
-            <FeedbackBoard />
-          )}
+            <Roadmap feedbackData={feedbackDataArray} />
+          </div>
+          <div>
+            <Header
+              selectedSortOption={selectedSortOption}
+              setSelectedSortOption={setSelectedSortOption}
+              dropdownSelections={dropdownSelections}
+              feedbackData={feedbackDataArray}
+              setAddFeedbackView={setAddFeedbackView}
+            />
+            {feedbackData.length ? (
+              <FeedbackUnit
+                selectedCategory={selectedCategory}
+                selectedSortOption={selectedSortOption}
+                feedbackData={feedbackDataArray}
+              />
+            ) : (
+              <FeedbackBoard setAddFeedbackView={setAddFeedbackView} />
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <CreateNewFeedback
+        setAddFeedbackView={setAddFeedbackView}
+        feedbackData={feedbackDataArray}
+        setFeedbackData={setFeedbackDataArray}
+        onAddFeedback={addFeedback}
+      />
+    );
+  }
 }
