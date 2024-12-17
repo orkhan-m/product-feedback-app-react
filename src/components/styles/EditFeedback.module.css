@@ -1,4 +1,4 @@
-/* SECTION Create New Feedback */
+/* SECTION Edit Feedback */
 * {
   font-family: "Jost";
 }
@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 74.5rem;
+  height: 91rem;
   width: 54rem;
   margin: auto;
   margin-top: 9.2rem;
@@ -36,7 +36,7 @@
   position: relative;
   background-color: #ffffff;
   border-radius: 1rem;
-  height: 65.7rem;
+  height: 82.2rem;
   width: 54rem;
 }
 
@@ -69,24 +69,24 @@
 
 .titleLabel,
 .categoryLabel,
+.updateStatusLabel,
 .feedbackDetailLabel {
   display: block;
   color: #3a4374;
   font-size: 1.4rem;
   font-weight: 700;
   margin-left: 4.2rem;
-  margin-top: 4rem;
+  margin-top: 7.5rem;
 }
 
-.categoryLabel {
-  margin-top: 2.4rem;
-}
-
+.categoryLabel,
+.updateStatusLabel,
 .feedbackDetailLabel {
   margin-top: 2.4rem;
 }
 
 .titleDescription,
+.updateStatusDescription,
 .feedbackDetailDescription {
   display: block;
   font-size: 1.4rem;
@@ -96,6 +96,7 @@
 }
 
 .titleInput {
+  font-family: "Jost";
   display: block;
   margin-left: 4.2rem;
   margin-top: 1.6rem;
@@ -170,7 +171,6 @@
   margin-left: auto;
   margin-right: 2.4rem;
 }
-/* ------------------- */
 
 .dropdown {
   position: absolute;
@@ -203,10 +203,82 @@
   cursor: pointer;
 }
 
+.dropdownStatus {
+  position: absolute;
+  top: 6.4rem;
+  /* left: 0; */
+  width: 45.6rem;
+  height: 19.1rem;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0px 10px 40px -7px rgba(55, 63, 104, 0.350492);
+  z-index: 1;
+}
+
+.dropdownStatus ul li {
+  position: relative;
+  color: #647196;
+  list-style-type: none;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  padding-left: 2.4rem;
+  font-size: 1.5rem;
+}
+
+.dropdownStatus ul li:not(:last-child) {
+  border-bottom: 0.1rem solid rgba(58, 67, 116, 0.15);
+}
+
+.dropdownStatus ul li:hover {
+  color: #ad1fea;
+  cursor: pointer;
+}
+
 .tickIcon {
   position: absolute;
   right: 2.4rem;
   top: 1.989rem;
+}
+
+.statusSelect {
+  position: relative;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center items vertically */
+  color: #3a4374;
+  font-size: 1.5rem;
+  background-color: #f7f8fd;
+  border-radius: 0.5rem;
+  border: none;
+  height: 4.8rem;
+  width: 45.6rem;
+  margin-left: 4.2rem;
+  margin-top: 1.6rem;
+  margin-right: 2.4rem;
+  cursor: pointer;
+}
+
+.statusSelectActive {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #3a4374;
+  font-size: 1.5rem;
+  background-color: #f7f8fd;
+  border-radius: 0.5rem;
+  border: none;
+  height: 4.8rem;
+  width: 45.6rem;
+  margin-left: 4.2rem;
+  margin-top: 1.6rem;
+  margin-right: 2.4rem;
+  outline: 1px solid #4661e6;
+  cursor: pointer;
+}
+
+.statusSelectText {
+  color: #647196;
+  font-size: 1.5rem;
+  padding-left: 2.4rem;
 }
 
 .feedbackDetailInput {
@@ -235,8 +307,14 @@
 .buttonContainer {
   display: flex;
   margin-right: 4.2rem;
-  justify-content: flex-end;
-  gap: 1rem; /* Optional: adds space between buttons */
+  margin-left: 4.2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cancelAndAddFeedbackBtnContainer {
+  display: flex;
+  gap: 1.6rem;
 }
 
 .btn {
@@ -267,6 +345,14 @@
 
 .addFeedbackBtn:hover {
   background-color: #c75af6;
+}
+
+.deleteBtn {
+  background-color: #d73737;
+}
+
+.deleteBtn:hover {
+  background-color: #e98888;
 }
 
 .textErrorMessage {

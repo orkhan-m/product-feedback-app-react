@@ -1,22 +1,28 @@
-import styles from "./styles/CreateNewFeedback.module.css";
+import styles from "./styles/EditFeedback.module.css";
 import returnIcon from "../assets/return_icon.svg";
-import plusIcon from "../assets/plus_icon.svg";
+import editIcon from "../assets/edit_icon.svg";
 import dropdownIcon from "../assets/feedback_category_dropdown_icon.svg";
 import dropdownIconReverse from "../assets/feedback_category_dropdown_icon_reverse.svg";
 import tickIcon from "../assets/tick_icon.svg";
 import { useState } from "react";
 
 const categories = ["Feature", "UI", "UX", "Enhancement", "Bug"];
+const statuses = ["Suggestion", "Planned", "In-Progress", "Live"];
 
-export default function CreateNewFeedback({
-  setAddFeedbackView,
-  feedbackData,
-  onAddFeedback,
+export default function EditFeedback({
+  setEditFeedbackView,
+  itemToEdit,
+  onUpdateFeedback,
+  onDeleteFeedback,
 }) {
-  const [selectedCategory, setSelectedCategory] = useState("Feature");
-  const [title, setTitle] = useState("");
-  const [detail, setDetail] = useState("");
-  const [categorySelect, setCategorySelect] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(itemToEdit.category);
+  const [categorySelectDropdown, setCategorySelectDropdown] = useState(false);
+
+  const [selectedStatus, setSelectedStatus] = useState(itemToEdit.status);
+  const [statusSelectDropdown, setStatusSelectDropdown] = useState(false);
+
+  const [title, setTitle] = useState(itemToEdit.title);
+  const [detail, setDetail] = useState(itemToEdit.text);
   const [isTitleEmpty, setIsTitleEmpty] = useState(false);
   const [isDetailEmpty, setIsDetailEmpty] = useState(false);
 
@@ -35,7 +41,9 @@ export default function CreateNewFeedback({
     setTitle("");
     setDetail("");
     setSelectedCategory("Feature");
-    setCategorySelect(false);
+    setSelectedStatus("Planned");
+    setCategorySelectDropdown(false);
+    setStatusSelectDropdown(false);
     setIsTitleEmpty(false);
     setIsDetailEmpty(false);
   }
@@ -61,37 +69,34 @@ export default function CreateNewFeedback({
 
     if (!valid) return;
 
-    const newFeedback = {
-      // index: feedbackData.length + 1,
-      index: feedbackData.length
-        ? feedbackData[feedbackData.length - 1].index + 1
-        : 0,
-      title,
+    const editedFeedback = {
+      index: itemToEdit.index,
+      title: title,
       text: detail,
-      likes: 0,
-      comments: 0,
+      likes: itemToEdit.likes,
+      comments: itemToEdit.comments,
       category: selectedCategory,
-      status: "Planned",
+      status: selectedStatus,
+      liked: itemToEdit.liked,
     };
-    onAddFeedback(newFeedback);
 
-    setAddFeedbackView(false);
+    onUpdateFeedback(itemToEdit.index, editedFeedback);
+
+    setEditFeedbackView(false);
   }
 
-  // {
-  //   index: 6,
-  //   title: "Preview images not loading",
-  //   text: "Challenge preview images are missing when you apply a filter.",
-  //   likes: 3,
-  //   comments: 0,
-  //   category: "Bug",
-  // },
+  function handleDelete(e) {
+    e.preventDefault();
+    // Delete item
+    onDeleteFeedback(itemToEdit.index);
+    setEditFeedbackView(false);
+  }
 
   return (
     <div className={styles.mainCanvas}>
       <div
         className={styles.goBackSection}
-        onClick={() => setAddFeedbackView(false)}
+        onClick={() => setEditFeedbackView(false)}
       >
         <img
           className={styles.goBackIcon}
@@ -102,10 +107,12 @@ export default function CreateNewFeedback({
       </div>
       <div className={styles.feedbackForm}>
         <div className={styles.feedbackCircle}>
-          <img src={plusIcon} alt="Plus Icon" />
+          <img src={editIcon} alt="Edit Icon" />
         </div>
         <form onSubmit={handleSubmit}>
-          <label className={styles.mainLabel}>Create New Feedback</label>
+          <label className={styles.mainLabel}>
+            Editing '{itemToEdit.title}'
+          </label>
           <label className={styles.titleLabel}>Feedback Title</label>
           <label className={styles.titleDescription}>
             Add a short, descriptive headline
@@ -129,19 +136,19 @@ export default function CreateNewFeedback({
           </label>
           <div
             className={
-              categorySelect
+              categorySelectDropdown
                 ? styles.categorySelectActive
                 : styles.categorySelect
             }
-            onClick={() => setCategorySelect((prev) => !prev)}
+            onClick={() => setCategorySelectDropdown((prev) => !prev)}
           >
             <p className={styles.categorySelectText}>{selectedCategory}</p>
             <img
               className={styles.dropdownIcon}
-              src={categorySelect ? dropdownIconReverse : dropdownIcon}
+              src={categorySelectDropdown ? dropdownIconReverse : dropdownIcon}
               alt="Dropdown Icon"
             />
-            {categorySelect && (
+            {categorySelectDropdown && (
               <div className={styles.dropdown}>
                 <ul>
                   {categories.map((selection) => (
@@ -150,11 +157,55 @@ export default function CreateNewFeedback({
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedCategory(selection);
-                        setCategorySelect(false);
+                        setCategorySelectDropdown(false);
                       }}
                     >
                       {selection}
                       {selection === selectedCategory && (
+                        <img
+                          src={tickIcon}
+                          alt="Selected"
+                          className={styles.tickIcon}
+                        />
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+          <label className={styles.updateStatusLabel}>Update Status</label>
+          <label className={styles.updateStatusDescription}>
+            Change feature state
+          </label>
+          <div
+            className={
+              statusSelectDropdown
+                ? styles.statusSelectActive
+                : styles.statusSelect
+            }
+            onClick={() => setStatusSelectDropdown((prev) => !prev)}
+          >
+            <p className={styles.statusSelectText}>{selectedStatus}</p>
+            <img
+              className={styles.dropdownIcon}
+              src={statusSelectDropdown ? dropdownIconReverse : dropdownIcon}
+              alt="Dropdown Icon"
+            />
+            {statusSelectDropdown && (
+              <div className={styles.dropdownStatus}>
+                <ul>
+                  {statuses.map((selection) => (
+                    <li
+                      key={selection}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedStatus(selection);
+                        setStatusSelectDropdown(false);
+                      }}
+                    >
+                      {selection}
+                      {selection === selectedStatus && (
                         <img
                           src={tickIcon}
                           alt="Selected"
@@ -173,7 +224,6 @@ export default function CreateNewFeedback({
             etc.
           </label>
           <textarea
-            // className={styles.feedbackDetailInput}
             className={
               !isDetailEmpty
                 ? styles.feedbackDetailInput
@@ -187,19 +237,29 @@ export default function CreateNewFeedback({
             <p className={styles.textErrorMessage}>Can't be empty</p>
           )}
           <div className={styles.buttonContainer}>
-            <button
-              className={`${styles.cancelBtn} ${styles.btn}`}
-              onClick={cancelBtn}
-            >
-              Cancel
-            </button>
-            <button
-              className={`${styles.addFeedbackBtn} ${styles.btn}`}
-              // onSubmit={handleSubmit}
-              type="submit"
-            >
-              Add Feedback
-            </button>
+            <div>
+              <button
+                className={`${styles.deleteBtn} ${styles.btn}`}
+                type="submit"
+                onClick={handleDelete}
+              >
+                Delete
+              </button>
+            </div>
+            <div className={styles.cancelAndAddFeedbackBtnContainer}>
+              <button
+                className={`${styles.cancelBtn} ${styles.btn}`}
+                onClick={cancelBtn}
+              >
+                Cancel
+              </button>
+              <button
+                className={`${styles.addFeedbackBtn} ${styles.btn}`}
+                type="submit"
+              >
+                Add Feedback
+              </button>
+            </div>
           </div>
         </form>
       </div>

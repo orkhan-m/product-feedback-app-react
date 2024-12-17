@@ -1,4 +1,3 @@
-// import React, { useState } from "react";
 import styles from "./styles/FeedbackUnit.module.css";
 import increaseLikes from "../assets/increase_likes.svg";
 import increaseLikesWhite from "../assets/increase_likes_white.svg";
@@ -9,6 +8,8 @@ export default function FeedbackUnit({
   selectedSortOption,
   feedbackData,
   setFeedbackDataArray,
+  setEditFeedbackView,
+  setItemToEdit,
 }) {
   function handleLikeClicks(index) {
     console.log("This is index:" + index);
@@ -23,6 +24,12 @@ export default function FeedbackUnit({
           : item
       )
     );
+  }
+
+  function itemEdit(item) {
+    console.log("This is item:" + item.title);
+    setItemToEdit(item);
+    setEditFeedbackView(true);
   }
 
   return (
@@ -46,11 +53,18 @@ export default function FeedbackUnit({
           }
         })
         .map((data, _) => (
-          <div key={data.index} className={styles.feedbackUnit}>
+          <div
+            key={data.index}
+            className={styles.feedbackUnit}
+            onClick={() => itemEdit(data)}
+          >
             <div className={styles.content}>
               <button
                 className={data.liked ? styles.likesLiked : styles.likes}
-                onClick={() => handleLikeClicks(data.index)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleLikeClicks(data.index);
+                }}
               >
                 <img
                   src={data.liked ? increaseLikesWhite : increaseLikes}
