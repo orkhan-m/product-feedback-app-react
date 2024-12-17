@@ -5,6 +5,11 @@
   height: 15.1rem;
   background-color: #ffffff;
   margin-top: 2.4rem;
+  cursor: pointer;
+}
+
+.feedbackUnit:hover {
+  box-shadow: 0.3rem 0.3rem 0.2rem #eeeeee;
 }
 
 .content {
