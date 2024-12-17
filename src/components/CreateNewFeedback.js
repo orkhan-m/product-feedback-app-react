@@ -71,7 +71,7 @@ export default function CreateNewFeedback({
       likes: 0,
       comments: 0,
       category: selectedCategory,
-      status: "Planned",
+      status: "Suggestion",
     };
     onAddFeedback(newFeedback);
 
