@@ -35,9 +35,12 @@
 .feedbackForm {
   position: relative;
   background-color: #ffffff;
+  margin-top: 6.8rem;
+  margin-bottom: 6.8rem;
   border-radius: 1rem;
-  height: 82.2rem;
   width: 54rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .feedbackCircle {
@@ -308,6 +311,7 @@
   display: flex;
   margin-right: 4.2rem;
   margin-left: 4.2rem;
+  margin-bottom: 4rem;
   justify-content: space-between;
   align-items: center;
 }

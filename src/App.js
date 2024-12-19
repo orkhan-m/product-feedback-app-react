@@ -54,6 +54,10 @@ export default function App() {
     );
   }
 
+  function handleSelection(feature) {
+    setSelectedCategory(feature);
+  }
+
   if (!addFeedbackView && !editFeedbackView && !roadmapView) {
     return (
       <div>
@@ -62,7 +66,7 @@ export default function App() {
             <FeedbackBoardIcon />
             <CategoryFilter
               selectedCategory={selectedCategory}
-              setSelectedCategory={setSelectedCategory}
+              handleSelection={handleSelection}
             />
             <Roadmap
               feedbackData={feedbackDataArray}
@@ -77,7 +81,13 @@ export default function App() {
               feedbackData={feedbackDataArray}
               setAddFeedbackView={setAddFeedbackView}
             />
-            {feedbackDataArray.length ? (
+            {(
+              selectedCategory === "All"
+                ? feedbackDataArray.length
+                : feedbackDataArray.filter(
+                    (data) => data.category === selectedCategory
+                  ).length
+            ) ? (
               <FeedbackUnit
                 selectedCategory={selectedCategory}
                 selectedSortOption={selectedSortOption}

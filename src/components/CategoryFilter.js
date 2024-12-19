@@ -2,14 +2,7 @@
 import styles from "./styles/CategoryFilter.module.css";
 import { features } from "../data/categoryFilterData";
 
-export default function CategoryFilter({
-  selectedCategory,
-  setSelectedCategory,
-}) {
-  function handleSelection(feature) {
-    setSelectedCategory(feature);
-  }
-
+export default function CategoryFilter({ selectedCategory, handleSelection }) {
   return (
     <div className={styles.categoryFilter}>
       {features.map((features) => (
