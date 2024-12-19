@@ -1,0 +1,96 @@
+/* SECTION Roadmap  Header */
+* {
+  font-family: "Jost";
+}
+
+.roadmapPage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.roadmapHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 7.8rem;
+  height: 11.3rem;
+  width: 111rem;
+  background-color: #373f68;
+  border-radius: 1rem;
+}
+
+.roadmapText {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  margin-left: 3.2rem;
+}
+
+.goBackSection {
+  display: flex;
+  align-items: center;
+}
+
+.goBackSection:hover {
+  cursor: pointer;
+}
+
+.goBackSection span {
+  margin-left: 1.567rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.goBackSection:hover span {
+  text-decoration: underline;
+}
+
+.roadmapTitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-top: 0.4rem;
+}
+
+.addFeedbackButton {
+  color: #f2f4fe;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-right: 4rem;
+  height: 4.4rem;
+  width: 15.8rem;
+  border-radius: 1rem;
+  background-color: #ad1fea;
+  border: none;
+}
+
+.addFeedbackButton:hover {
+  cursor: pointer;
+  background-color: #c75af6;
+}
+
+.mainBody {
+  display: flex;
+  gap: 3rem;
+  margin-top: 4.8rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 35rem;
+}
+
+.columnTitle {
+  color: #3a4374;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.025rem;
+}
+
+.columnDescription {
+  color: #647196;
+  font-size: 1.6rem;
+  margin-top: 0.4rem;
+  margin-bottom: 3.2rem;
+}

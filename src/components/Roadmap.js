@@ -1,6 +1,6 @@
 import styles from "./styles/Roadmap.module.css";
 
-export default function Roadmap({ feedbackData }) {
+export default function Roadmap({ feedbackData, setRoadmapView }) {
   const plannedCount = feedbackData.filter(
     (data) => data.status === "Planned"
   ).length;
@@ -21,6 +21,7 @@ export default function Roadmap({ feedbackData }) {
               ? styles.roadmapView
               : styles.roadmapViewDisabled
           }
+          onClick={feedbackData.length ? () => setRoadmapView(true) : null}
         >
           View
         </button>

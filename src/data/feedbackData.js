@@ -7,6 +7,7 @@ export const feedbackData = [
     comments: 2,
     category: "Enhancement",
     status: "Planned",
+    liked: false,
   },
   {
     index: 2,
@@ -16,6 +17,7 @@ export const feedbackData = [
     comments: 4,
     category: "Feature",
     status: "Planned",
+    liked: false,
   },
   {
     index: 3,
@@ -25,6 +27,7 @@ export const feedbackData = [
     comments: 1,
     category: "Feature",
     status: "In-Progress",
+    liked: false,
   },
   {
     index: 4,
@@ -34,6 +37,7 @@ export const feedbackData = [
     comments: 2,
     category: "Enhancement",
     status: "In-Progress",
+    liked: false,
   },
   {
     index: 5,
@@ -43,6 +47,7 @@ export const feedbackData = [
     comments: 3,
     category: "Feature",
     status: "Live",
+    liked: false,
   },
   {
     index: 6,
@@ -52,5 +57,6 @@ export const feedbackData = [
     comments: 0,
     category: "Bug",
     status: "In-Progress",
+    liked: false,
   },
 ];
