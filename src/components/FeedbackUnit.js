@@ -10,22 +10,8 @@ export default function FeedbackUnit({
   setFeedbackDataArray,
   setEditFeedbackView,
   setItemToEdit,
+  handleLikeClicks,
 }) {
-  function handleLikeClicks(index) {
-    console.log("This is index:" + index);
-    setFeedbackDataArray((prevData) =>
-      prevData.map((item, _) =>
-        item.index === index
-          ? {
-              ...item,
-              likes: item.likes + (item.liked ? -1 : 1),
-              liked: !item.liked,
-            }
-          : item
-      )
-    );
-  }
-
   function itemEdit(item) {
     console.log("This is item:" + item.title);
     setItemToEdit(item);

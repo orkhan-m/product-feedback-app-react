@@ -11,6 +11,7 @@ import CreateNewFeedback from "./components/CreateNewFeedback.js";
 import EditFeedback from "./components/EditFeedback.js";
 import { feedbackData } from "./data/feedbackData";
 import { dropdownSelections } from "./data/sortDropDownSelection";
+import RoadmapPage from "./components/RoadmapPage.js";
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -20,6 +21,8 @@ export default function App() {
 
   const [editFeedbackView, setEditFeedbackView] = useState(false);
   const [itemToEdit, setItemToEdit] = useState(null);
+
+  const [roadmapView, setRoadmapView] = useState(false);
 
   function addFeedback(feedback) {
     setFeedbackDataArray([...feedbackDataArray, feedback]);
@@ -37,7 +40,21 @@ export default function App() {
     );
   }
 
-  if (!addFeedbackView && !editFeedbackView) {
+  function handleLikeClicks(index) {
+    setFeedbackDataArray((prevData) =>
+      prevData.map((item, _) =>
+        item.index === index
+          ? {
+              ...item,
+              likes: item.likes + (item.liked ? -1 : 1),
+              liked: !item.liked,
+            }
+          : item
+      )
+    );
+  }
+
+  if (!addFeedbackView && !editFeedbackView && !roadmapView) {
     return (
       <div>
         <div className="pageTop">
@@ -47,7 +64,10 @@ export default function App() {
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
             />
-            <Roadmap feedbackData={feedbackDataArray} />
+            <Roadmap
+              feedbackData={feedbackDataArray}
+              setRoadmapView={setRoadmapView}
+            />
           </div>
           <div>
             <Header
@@ -65,6 +85,7 @@ export default function App() {
                 setFeedbackDataArray={setFeedbackDataArray}
                 setEditFeedbackView={setEditFeedbackView}
                 setItemToEdit={setItemToEdit}
+                handleLikeClicks={handleLikeClicks}
               />
             ) : (
               <FeedbackBoard setAddFeedbackView={setAddFeedbackView} />
@@ -90,6 +111,15 @@ export default function App() {
         itemToEdit={itemToEdit}
         onUpdateFeedback={updateFeedback}
         onDeleteFeedback={deleteFeedback}
+      />
+    );
+  } else if (roadmapView) {
+    return (
+      <RoadmapPage
+        setRoadmapView={setRoadmapView}
+        setAddFeedbackView={setAddFeedbackView}
+        feedbackDataArray={feedbackDataArray}
+        handleLikeClicks={handleLikeClicks}
       />
     );
   }

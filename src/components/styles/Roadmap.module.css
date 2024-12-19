@@ -33,6 +33,7 @@
   font-weight: 600;
   text-decoration: underline;
   border: none;
+  cursor: not-allowed;
 }
 
 .roadmapView {

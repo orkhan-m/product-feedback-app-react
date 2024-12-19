@@ -27,8 +27,9 @@
   border: none;
   border-radius: 1rem;
   align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
+  /* justify-content: center; */
+  justify-content: space-evenly;
+  /* gap: 0.8rem; */
 }
 
 .likes:hover {
