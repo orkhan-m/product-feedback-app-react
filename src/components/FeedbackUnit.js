@@ -11,11 +11,11 @@ export default function FeedbackUnit({
   setEditFeedbackView,
   setItemToEdit,
   handleLikeClicks,
+  setCommentSectionView,
 }) {
-  function itemEdit(item) {
-    console.log("This is item:" + item.title);
+  function itemComment(item) {
     setItemToEdit(item);
-    setEditFeedbackView(true);
+    setCommentSectionView(true);
   }
 
   return (
@@ -42,7 +42,7 @@ export default function FeedbackUnit({
           <div
             key={data.index}
             className={styles.feedbackUnit}
-            onClick={() => itemEdit(data)}
+            onClick={() => itemComment(data)}
           >
             <div className={styles.content}>
               <button

@@ -8,6 +8,7 @@ export default function RoadmapFeedbackUnit({
   handleLikeClicks,
   status,
   color,
+  itemEdit,
 }) {
   const boxStyle = {
     display: "flex",
@@ -37,7 +38,9 @@ export default function RoadmapFeedbackUnit({
           <div style={dotStyle}></div>
           <span className={styles.status}>{status}</span>
         </div>
-        <p className={styles.feedbackTitle}>{feedback.title}</p>
+        <p className={styles.feedbackTitle} onClick={() => itemEdit(feedback)}>
+          {feedback.title}
+        </p>
         <p className={styles.feedbackDescription}>{feedback.text}</p>
         <p className={styles.feedbackCategory}>{feedback.category}</p>
         <div className={styles.feedbackLikesAndComments}>

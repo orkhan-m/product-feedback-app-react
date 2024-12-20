@@ -12,14 +12,18 @@ import EditFeedback from "./components/EditFeedback.js";
 import { feedbackData } from "./data/feedbackData";
 import { dropdownSelections } from "./data/sortDropDownSelection";
 import RoadmapPage from "./components/RoadmapPage.js";
+import CommentSection from "./components/CommentSection.js";
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedSortOption, setSelectedSortOption] = useState("Most Upvotes");
+
   const [addFeedbackView, setAddFeedbackView] = useState(false);
   const [feedbackDataArray, setFeedbackDataArray] = useState(feedbackData);
 
   const [editFeedbackView, setEditFeedbackView] = useState(false);
+  const [commentSectionView, setCommentSectionView] = useState(false);
+
   const [itemToEdit, setItemToEdit] = useState(null);
 
   const [roadmapView, setRoadmapView] = useState(false);
@@ -58,7 +62,18 @@ export default function App() {
     setSelectedCategory(feature);
   }
 
-  if (!addFeedbackView && !editFeedbackView && !roadmapView) {
+  function itemEdit(item) {
+    // NOTE to be used for editiong
+    setItemToEdit(item);
+    setEditFeedbackView(true);
+  }
+
+  if (
+    !addFeedbackView &&
+    !editFeedbackView &&
+    !commentSectionView &&
+    !roadmapView
+  ) {
     return (
       <div>
         <div className="pageTop">
@@ -94,6 +109,7 @@ export default function App() {
                 feedbackData={feedbackDataArray}
                 setFeedbackDataArray={setFeedbackDataArray}
                 setEditFeedbackView={setEditFeedbackView}
+                setCommentSectionView={setCommentSectionView}
                 setItemToEdit={setItemToEdit}
                 handleLikeClicks={handleLikeClicks}
               />
@@ -130,6 +146,15 @@ export default function App() {
         setAddFeedbackView={setAddFeedbackView}
         feedbackDataArray={feedbackDataArray}
         handleLikeClicks={handleLikeClicks}
+        itemEdit={itemEdit}
+      />
+    );
+  } else if (commentSectionView) {
+    return (
+      <CommentSection
+        setCommentSectionView={setCommentSectionView}
+        setItemToEdit={setItemToEdit}
+        setEditFeedbackView={setEditFeedbackView}
       />
     );
   }

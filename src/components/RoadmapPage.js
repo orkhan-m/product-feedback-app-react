@@ -7,6 +7,7 @@ export default function RoadmapPage({
   setAddFeedbackView,
   feedbackDataArray,
   handleLikeClicks,
+  itemEdit,
 }) {
   return (
     <div className={styles.roadmapPage}>
@@ -49,6 +50,7 @@ export default function RoadmapPage({
             handleLikeClicks={handleLikeClicks}
             status="Planned"
             color="#F49F85"
+            itemEdit={itemEdit}
           />
         </div>
         <div className={`${styles.columndInProgress} ${styles.column}`}>
@@ -66,6 +68,7 @@ export default function RoadmapPage({
             handleLikeClicks={handleLikeClicks}
             status="In-Progress"
             color="#AD1FEA"
+            itemEdit={itemEdit}
           />
         </div>
 
@@ -80,6 +83,7 @@ export default function RoadmapPage({
             handleLikeClicks={handleLikeClicks}
             status="Live"
             color="#62BCFA"
+            itemEdit={itemEdit}
           />
         </div>
       </div>

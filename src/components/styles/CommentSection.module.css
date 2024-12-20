@@ -1,0 +1,57 @@
+/* SECTION Comment Section */
+* {
+  font-family: "Jost";
+}
+
+.mainBody {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 73rem;
+}
+
+.goBackAndEditButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.goBackSection {
+  cursor: pointer;
+}
+
+.goBackSection:hover p {
+  text-decoration: underline;
+}
+
+.goBackText {
+  font-size: 1.4rem;
+  display: inline;
+  color: #647196;
+  font-weight: 700;
+  margin-left: 1.567rem;
+}
+
+.btn {
+  color: #f2f4fe;
+  height: 4.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  border: none;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+
+.editButton {
+  background-color: #4661e6;
+  cursor: pointer;
+}
+
+.editButton:hover {
+  background-color: #7d85db;
+}
