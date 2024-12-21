@@ -9,7 +9,7 @@ export default function Header({
   selectedSortOption,
   setSelectedSortOption,
   dropdownSelections,
-  feedbackData,
+  feedbackDataArray,
   setAddFeedbackView,
 }) {
   const [displayDropdown, setDisplayDropdown] = useState(false);
@@ -27,15 +27,15 @@ export default function Header({
     <div className={styles.navBar}>
       <img className={styles.bulbIcon} src={bulbSvg} alt="Bulb Icon" />
       <p className={styles.navBarSuggestions}>
-        {feedbackData.length} Suggestions
+        {feedbackDataArray.length} Suggestions
       </p>
       <p
         className={
-          !displayDropdown && feedbackData.length
+          !displayDropdown && feedbackDataArray.length
             ? styles.sortBy
             : styles.sortByDisabled
         }
-        onClick={feedbackData.length ? toggleDropdown : null}
+        onClick={feedbackDataArray.length ? toggleDropdown : null}
       >
         Sort by :{" "}
         <span className={styles.dropdownItems}>

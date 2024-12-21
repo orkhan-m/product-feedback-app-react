@@ -10,7 +10,7 @@ const categories = ["Feature", "UI", "UX", "Enhancement", "Bug"];
 
 export default function CreateNewFeedback({
   setAddFeedbackView,
-  feedbackData,
+  feedbackDataArray,
   onAddFeedback,
 }) {
   const [selectedCategory, setSelectedCategory] = useState("Feature");
@@ -62,9 +62,9 @@ export default function CreateNewFeedback({
     if (!valid) return;
 
     const newFeedback = {
-      // index: feedbackData.length + 1,
-      index: feedbackData.length
-        ? feedbackData[feedbackData.length - 1].index + 1
+      // index: feedbackDataArray.length + 1,
+      index: feedbackDataArray.length
+        ? feedbackDataArray[feedbackDataArray.length - 1].index + 1
         : 0,
       title,
       text: detail,

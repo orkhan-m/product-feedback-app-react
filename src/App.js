@@ -25,6 +25,7 @@ export default function App() {
   const [commentSectionView, setCommentSectionView] = useState(false);
 
   const [itemToEdit, setItemToEdit] = useState(null);
+  const [itemToComment, setItemToComment] = useState(null);
 
   const [roadmapView, setRoadmapView] = useState(false);
 
@@ -46,7 +47,7 @@ export default function App() {
 
   function handleLikeClicks(index) {
     setFeedbackDataArray((prevData) =>
-      prevData.map((item, _) =>
+      prevData.map((item) =>
         item.index === index
           ? {
               ...item,
@@ -55,6 +56,15 @@ export default function App() {
             }
           : item
       )
+    );
+    setItemToComment((prev) =>
+      prev && prev.index === index
+        ? {
+            ...prev,
+            likes: prev.likes + (prev.liked ? -1 : 1),
+            liked: !prev.liked,
+          }
+        : prev
     );
   }
 
@@ -84,7 +94,7 @@ export default function App() {
               handleSelection={handleSelection}
             />
             <Roadmap
-              feedbackData={feedbackDataArray}
+              feedbackDataArray={feedbackDataArray}
               setRoadmapView={setRoadmapView}
             />
           </div>
@@ -93,7 +103,7 @@ export default function App() {
               selectedSortOption={selectedSortOption}
               setSelectedSortOption={setSelectedSortOption}
               dropdownSelections={dropdownSelections}
-              feedbackData={feedbackDataArray}
+              feedbackDataArray={feedbackDataArray}
               setAddFeedbackView={setAddFeedbackView}
             />
             {(
@@ -106,12 +116,14 @@ export default function App() {
               <FeedbackUnit
                 selectedCategory={selectedCategory}
                 selectedSortOption={selectedSortOption}
-                feedbackData={feedbackDataArray}
                 setFeedbackDataArray={setFeedbackDataArray}
                 setEditFeedbackView={setEditFeedbackView}
                 setCommentSectionView={setCommentSectionView}
                 setItemToEdit={setItemToEdit}
+                feedbackDataArray={feedbackDataArray}
                 handleLikeClicks={handleLikeClicks}
+                setItemToComment={setItemToComment}
+                itemToComment={itemToComment}
               />
             ) : (
               <FeedbackBoard setAddFeedbackView={setAddFeedbackView} />
@@ -124,7 +136,7 @@ export default function App() {
     return (
       <CreateNewFeedback
         setAddFeedbackView={setAddFeedbackView}
-        feedbackData={feedbackDataArray}
+        feedbackDataArray={feedbackDataArray}
         setFeedbackData={setFeedbackDataArray}
         onAddFeedback={addFeedback}
       />
@@ -155,6 +167,9 @@ export default function App() {
         setCommentSectionView={setCommentSectionView}
         setItemToEdit={setItemToEdit}
         setEditFeedbackView={setEditFeedbackView}
+        handleLikeClicks={handleLikeClicks}
+        itemToComment={itemToComment}
+        feedbackDataArray={feedbackDataArray}
       />
     );
   }

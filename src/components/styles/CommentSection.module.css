@@ -3,6 +3,14 @@
   font-family: "Jost";
 }
 
+.feedbackUnit {
+  border-radius: 1rem;
+  width: 82.5rem;
+  height: 15.1rem;
+  background-color: #ffffff;
+  margin-top: 2.4rem;
+}
+
 .mainBody {
   display: flex;
   align-items: center;
