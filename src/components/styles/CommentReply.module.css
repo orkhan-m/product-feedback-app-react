@@ -3,9 +3,21 @@
   flex-direction: column;
 }
 
-.userInfoAndReply {
+.primaryUserInfoAndReply {
   display: flex;
   margin-left: 3.2rem;
+  margin-bottom: 1.7rem;
+}
+
+.secondaryUserInfoAndReply {
+  display: flex;
+  margin-left: 7.7rem;
+  margin-bottom: 1.7rem;
+}
+
+.thirdUserInfoAndReply {
+  display: flex;
+  margin-left: 12.2rem;
   margin-bottom: 1.7rem;
 }
 
@@ -47,7 +59,25 @@
 }
 
 .primaryComment {
-  margin-left: 10.8rem;
+  margin-left: 10.4rem;
+  margin-right: 3.2rem;
+  font-size: 1.5rem;
+  color: #647196;
+
+  margin-bottom: 3.2rem;
+}
+
+.secondaryComment {
+  margin-left: 14.9rem;
+  margin-right: 3.2rem;
+  font-size: 1.5rem;
+  color: #647196;
+
+  margin-bottom: 3.2rem;
+}
+
+.thirdComment {
+  margin-left: 19.4rem;
   margin-right: 3.2rem;
   font-size: 1.5rem;
   color: #647196;

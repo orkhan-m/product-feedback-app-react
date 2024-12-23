@@ -1,27 +1,35 @@
 import styles from "./styles/CommentReply.module.css";
+import SingleComment from "./SingleComment";
 
 export default function CommentReply({ data }) {
   return (
     <div className={styles.canvas}>
-      {data.commentsArray.length > 0 && (
-        <>
-          <div className={styles.userInfoAndReply}>
-            <img
-              src={`profile_pictures/${data.commentsArray[0].user.avatar}`}
-              alt="User Avatar"
-              className={styles.avatar}
-            />
-            <div className={styles.nameAndUsername}>
-              <p className={styles.name}>{data.commentsArray[0].user.name}</p>
-              <p className={styles.username}>
-                @{data.commentsArray[0].user.userName}
-              </p>
-            </div>
-            <button className={styles.replyBtn}>Reply</button>
+      {data.commentsArray.length > 0 &&
+        data.commentsArray.map((comment) => (
+          <div key={comment.id}>
+            <SingleComment comment={comment} order={`primary`} />
+            {comment.commentsArray.map((secondaryComments) => {
+              return (
+                <div key={secondaryComments.id}>
+                  <SingleComment
+                    comment={secondaryComments}
+                    order={`secondary`}
+                  />
+                  {secondaryComments.commentsArray.map((thirdComments) => {
+                    return (
+                      <div key={thirdComments.id}>
+                        <SingleComment
+                          comment={thirdComments}
+                          order={`third`}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
           </div>
-          <div class={styles.primaryComment}>{data.commentsArray[0].text}</div>
-        </>
-      )}
+        ))}
     </div>
   );
 }
