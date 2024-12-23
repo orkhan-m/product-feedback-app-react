@@ -1,0 +1,56 @@
+.canvas {
+  display: flex;
+  flex-direction: column;
+}
+
+.userInfoAndReply {
+  display: flex;
+  margin-left: 3.2rem;
+  margin-bottom: 1.7rem;
+}
+
+.avatar {
+  height: 4rem;
+  width: 4rem;
+}
+
+.nameAndUsername {
+  margin-left: 3.2rem;
+}
+
+.name {
+  color: #3a4374;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.019rem;
+}
+
+.username {
+  font-size: 1.4rem;
+  color: #647196;
+  font-weight: 400;
+}
+
+.replyBtn {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #4661e6;
+  border: none;
+  background: none;
+  margin-right: 3.2rem;
+  margin-left: auto;
+}
+
+.replyBtn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.primaryComment {
+  margin-left: 10.8rem;
+  margin-right: 3.2rem;
+  font-size: 1.5rem;
+  color: #647196;
+
+  margin-bottom: 3.2rem;
+}

@@ -1,6 +1,7 @@
 import styles from "./styles/CommentSection.module.css";
 import returnIcon from "../assets/return_icon.svg";
 import SingleFeedback from "./SingleFeedback";
+import CommentReply from "./CommentReply";
 
 export default function CommentSection({
   setCommentSectionView,
@@ -47,7 +48,10 @@ export default function CommentSection({
         />
       </div>
       <div className={styles.commentsBoard}>
-        <p>{countComments(currentItem.commentsArray)} Comments</p>
+        <p className={styles.numberOfComments}>
+          {countComments(currentItem.commentsArray)} Comments
+        </p>
+        <CommentReply data={currentItem} />
       </div>
     </div>
   );
