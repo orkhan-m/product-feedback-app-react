@@ -9,7 +9,12 @@ export default function CommentSection({
   handleLikeClicks,
   itemToComment,
   feedbackDataArray,
+  countComments,
 }) {
+  const currentItem = feedbackDataArray.find(
+    (item) => item.index === itemToComment.index
+  );
+
   return (
     <div className={styles.mainBody}>
       <div className={styles.goBackAndEditButton}>
@@ -27,20 +32,20 @@ export default function CommentSection({
         <button
           className={`${styles.editButton} ${styles.btn}`}
           onClick={() => {
-            setItemToEdit(itemToComment);
+            setItemToEdit(currentItem);
             setEditFeedbackView(true);
           }}
         >
           Edit Feedback
         </button>
       </div>
-      {feedbackDataArray
-        .filter((data) => data.index === itemToComment.index)
-        .map((data) => (
-          <div className={styles.feedbackUnit} key={data.index}>
-            <SingleFeedback data={data} handleLikeClicks={handleLikeClicks} />
-          </div>
-        ))}
+      <div className={styles.feedbackUnit}>
+        <SingleFeedback
+          data={currentItem}
+          handleLikeClicks={handleLikeClicks}
+          countComments={countComments}
+        />
+      </div>
     </div>
   );
 }

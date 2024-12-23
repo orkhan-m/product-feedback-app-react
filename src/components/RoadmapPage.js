@@ -8,6 +8,7 @@ export default function RoadmapPage({
   feedbackDataArray,
   handleLikeClicks,
   itemEdit,
+  countComments,
 }) {
   return (
     <div className={styles.roadmapPage}>
@@ -51,6 +52,7 @@ export default function RoadmapPage({
             status="Planned"
             color="#F49F85"
             itemEdit={itemEdit}
+            countComments={countComments}
           />
         </div>
         <div className={`${styles.columndInProgress} ${styles.column}`}>
@@ -69,6 +71,7 @@ export default function RoadmapPage({
             status="In-Progress"
             color="#AD1FEA"
             itemEdit={itemEdit}
+            countComments={countComments}
           />
         </div>
 
@@ -84,6 +87,7 @@ export default function RoadmapPage({
             status="Live"
             color="#62BCFA"
             itemEdit={itemEdit}
+            countComments={countComments}
           />
         </div>
       </div>

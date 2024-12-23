@@ -57,15 +57,6 @@ export default function App() {
           : item
       )
     );
-    setItemToComment((prev) =>
-      prev && prev.index === index
-        ? {
-            ...prev,
-            likes: prev.likes + (prev.liked ? -1 : 1),
-            liked: !prev.liked,
-          }
-        : prev
-    );
   }
 
   function handleSelection(feature) {
@@ -76,6 +67,15 @@ export default function App() {
     // NOTE to be used for editiong
     setItemToEdit(item);
     setEditFeedbackView(true);
+  }
+
+  function countComments(commentsArray, level = 1) {
+    if (level > 3 || !commentsArray) return 0;
+    return commentsArray.reduce(
+      (count, comment) =>
+        count + 1 + countComments(comment.commentsArray, level + 1),
+      0
+    );
   }
 
   if (
@@ -124,6 +124,7 @@ export default function App() {
                 handleLikeClicks={handleLikeClicks}
                 setItemToComment={setItemToComment}
                 itemToComment={itemToComment}
+                countComments={countComments}
               />
             ) : (
               <FeedbackBoard setAddFeedbackView={setAddFeedbackView} />
@@ -159,6 +160,7 @@ export default function App() {
         feedbackDataArray={feedbackDataArray}
         handleLikeClicks={handleLikeClicks}
         itemEdit={itemEdit}
+        countComments={countComments}
       />
     );
   } else if (commentSectionView) {
@@ -169,6 +171,7 @@ export default function App() {
         setEditFeedbackView={setEditFeedbackView}
         handleLikeClicks={handleLikeClicks}
         itemToComment={itemToComment}
+        countComments={countComments}
         feedbackDataArray={feedbackDataArray}
       />
     );

@@ -9,6 +9,7 @@ export default function RoadmapFeedbackUnit({
   status,
   color,
   itemEdit,
+  countComments,
 }) {
   const boxStyle = {
     display: "flex",
@@ -63,8 +64,15 @@ export default function RoadmapFeedbackUnit({
           </button>
           <div className={styles.iconAndNumberOfComments}>
             <img src={commentBubble} alt="Comment Bubble" />
-            <p style={feedback.comments ? null : { opacity: "0.5" }}>
-              {feedback.comments}
+            <p
+              style={
+                countComments(feedback.commentsArray)
+                  ? null
+                  : { opacity: "0.5" }
+              }
+            >
+              {/* {feedback.comments} */}
+              {countComments(feedback.commentsArray)}
             </p>
           </div>
         </div>

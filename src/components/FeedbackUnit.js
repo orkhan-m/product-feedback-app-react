@@ -10,6 +10,7 @@ export default function FeedbackUnit({
   setCommentSectionView,
   setItemToComment,
   itemToComment,
+  countComments,
 }) {
   function itemComment(item) {
     setItemToComment(item);
@@ -42,7 +43,11 @@ export default function FeedbackUnit({
             className={styles.feedbackUnit}
             onClick={() => itemComment(data)}
           >
-            <SingleFeedback data={data} handleLikeClicks={handleLikeClicks} />
+            <SingleFeedback
+              data={data}
+              handleLikeClicks={handleLikeClicks}
+              countComments={countComments}
+            />
           </div>
         ))}
     </>

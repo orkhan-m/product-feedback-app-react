@@ -69,6 +69,8 @@
   border-radius: 1rem;
 
   border: none;
+
+  cursor: pointer;
 }
 
 .iconAndNumberOfLikes:hover {
@@ -86,6 +88,8 @@
   border-radius: 1rem;
 
   border: none;
+
+  cursor: pointer;
 }
 
 .iconAndNumberOfLikesLiked p {

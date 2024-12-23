@@ -1,20 +1,13 @@
-import { useEffect } from "react";
 import styles from "./styles/SingleFeedback.module.css";
 import increaseLikes from "../assets/increase_likes.svg";
 import increaseLikesWhite from "../assets/increase_likes_white.svg";
 import commentBubble from "../assets/comment_bubble.svg";
 
-export default function SingleFeedback({ data, handleLikeClicks }) {
-  // Function to count comments recursively up to 3 levels deep
-  const countComments = (commentsArray, level = 1) => {
-    if (level > 3 || !commentsArray) return 0;
-    return commentsArray.reduce(
-      (count, comment) =>
-        count + 1 + countComments(comment.commentsArray, level + 1),
-      0
-    );
-  };
-
+export default function SingleFeedback({
+  data,
+  handleLikeClicks,
+  countComments,
+}) {
   const numberOfComments = countComments(data.commentsArray);
 
   return (
@@ -23,6 +16,7 @@ export default function SingleFeedback({ data, handleLikeClicks }) {
         <button
           className={data.liked ? styles.likesLiked : styles.likes}
           onClick={(e) => {
+            console.log("clicked");
             e.stopPropagation();
             handleLikeClicks(data.index);
           }}
