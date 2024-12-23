@@ -16,7 +16,6 @@ export default function SingleFeedback({
         <button
           className={data.liked ? styles.likesLiked : styles.likes}
           onClick={(e) => {
-            console.log("clicked");
             e.stopPropagation();
             handleLikeClicks(data.index);
           }}

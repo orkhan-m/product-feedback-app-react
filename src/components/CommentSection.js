@@ -46,6 +46,9 @@ export default function CommentSection({
           countComments={countComments}
         />
       </div>
+      <div className={styles.commentsBoard}>
+        <p>{countComments(currentItem.commentsArray)} Comments</p>
+      </div>
     </div>
   );
 }
