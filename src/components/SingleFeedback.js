@@ -5,9 +5,17 @@ import increaseLikesWhite from "../assets/increase_likes_white.svg";
 import commentBubble from "../assets/comment_bubble.svg";
 
 export default function SingleFeedback({ data, handleLikeClicks }) {
-  useEffect(() => {
-    // This effect will run whenever the `data` prop changes
-  }, [data]);
+  // Function to count comments recursively up to 3 levels deep
+  const countComments = (commentsArray, level = 1) => {
+    if (level > 3 || !commentsArray) return 0;
+    return commentsArray.reduce(
+      (count, comment) =>
+        count + 1 + countComments(comment.commentsArray, level + 1),
+      0
+    );
+  };
+
+  const numberOfComments = countComments(data.commentsArray);
 
   return (
     <div>
@@ -41,12 +49,12 @@ export default function SingleFeedback({ data, handleLikeClicks }) {
           <img src={commentBubble} alt="Comment Bubble Icon" />
           <p
             className={
-              data.comments
+              numberOfComments
                 ? styles.numberOfCommentsDigit
                 : styles.numberOfCommentsDigitZero
             }
           >
-            {data.comments}
+            {numberOfComments}
           </p>
         </div>
       </div>
