@@ -57,7 +57,17 @@ export const feedbackData = [
               avatar: "RyanWelles.png",
             },
             text: "@annev1990  Good point! Using any kind of style extension is great and can be highly customizable, like the ability to change contrast and brightness. I'd prefer not to use one of such extensions, however, for security and privacy reasons.",
-            commentsArray: [],
+            commentsArray: [
+              {
+                id: 5,
+                user: {
+                  name: "Ryan Welles",
+                  userName: "voyager.344",
+                  avatar: "RyanWelles.png",
+                },
+                text: "Just a check!",
+              },
+            ],
           },
         ],
       },

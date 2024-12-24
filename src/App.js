@@ -9,7 +9,7 @@ import FeedbackBoard from "./components/FeedbackBoard.js";
 import FeedbackUnit from "./components/FeedbackUnit.js";
 import CreateNewFeedback from "./components/CreateNewFeedback.js";
 import EditFeedback from "./components/EditFeedback.js";
-import { feedbackData } from "./data/feedbackData";
+import { feedbackData, currentUser } from "./data/feedbackData";
 import { dropdownSelections } from "./data/sortDropDownSelection";
 import RoadmapPage from "./components/RoadmapPage.js";
 import CommentSection from "./components/CommentSection.js";
@@ -71,6 +71,7 @@ export default function App() {
 
   function countComments(commentsArray, level = 1) {
     if (level > 3 || !commentsArray) return 0;
+
     return commentsArray.reduce(
       (count, comment) =>
         count + 1 + countComments(comment.commentsArray, level + 1),
@@ -173,6 +174,8 @@ export default function App() {
         itemToComment={itemToComment}
         countComments={countComments}
         feedbackDataArray={feedbackDataArray}
+        setFeedbackDataArray={setFeedbackDataArray}
+        currentUser={currentUser}
       />
     );
   }

@@ -1,0 +1,178 @@
+.primaryUserInfoAndReply {
+  display: flex;
+  margin-left: 3.2rem;
+  margin-bottom: 1.7rem;
+}
+
+.secondaryUserInfoAndReply {
+  display: flex;
+  margin-left: 7.7rem;
+  margin-bottom: 1.7rem;
+}
+
+.thirdUserInfoAndReply {
+  display: flex;
+  margin-left: 12.2rem;
+  margin-bottom: 1.7rem;
+}
+
+.avatar {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.nameAndUsername {
+  margin-left: 3.2rem;
+}
+
+.name {
+  color: #3a4374;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.019rem;
+}
+
+.username {
+  font-size: 1.4rem;
+  color: #647196;
+  font-weight: 400;
+}
+
+.replyBtn {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #4661e6;
+  border: none;
+  background: none;
+  margin-right: 3.2rem;
+  margin-left: auto;
+}
+
+.replyBtn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cancelBtn {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #d73737;
+  border: none;
+  background: none;
+  margin-right: 3.2rem;
+  margin-left: auto;
+}
+
+.cancelBtn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.primaryComment {
+  margin-left: 10.4rem;
+  margin-right: 3.2rem;
+  font-size: 1.5rem;
+  color: #647196;
+
+  margin-bottom: 3.2rem;
+}
+
+.secondaryComment {
+  margin-left: 14.9rem;
+  margin-right: 3.2rem;
+  font-size: 1.5rem;
+  color: #647196;
+
+  margin-bottom: 3.2rem;
+}
+
+.thirdComment {
+  margin-left: 19.4rem;
+  margin-right: 3.2rem;
+  font-size: 1.5rem;
+  color: #647196;
+
+  margin-bottom: 3.2rem;
+}
+
+.highlight {
+  color: #ad1fea;
+  font-weight: 700;
+}
+
+.replyBox {
+  display: flex;
+  position: relative;
+}
+
+.btn {
+  color: #f2f4fe;
+  height: 4.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  border: none;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+
+.replyTextarea {
+  height: 8rem;
+  flex-grow: 1;
+  /* width: 100%; */
+  background-color: #f7f8fd;
+  font-size: 1.5rem;
+
+  color: #3a4374;
+  font-size: 1.5rem;
+
+  resize: none;
+  border: none;
+  border-radius: 0.5rem;
+
+  /* margin-top: 2.4rem; */
+  margin-left: 3.4rem;
+  margin-bottom: 3.2rem;
+
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  padding-top: 1.6rem;
+
+  cursor: pointer;
+}
+
+.commentTextArea:focus {
+  outline: 1px solid #4661e6;
+}
+
+.primaryMarginTextarea {
+  margin-left: 10.4rem;
+}
+.secondaryMarginTextarea {
+  margin-left: 14.9rem;
+}
+
+.postCommentBtn {
+  background-color: #ad1fea;
+  color: #f2f4fe;
+
+  width: 11.7rem;
+  height: 4.4rem;
+
+  margin-right: 3.2rem;
+  margin-left: 1.6rem;
+
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.inputError {
+  outline: 1px solid #d73737;
+}

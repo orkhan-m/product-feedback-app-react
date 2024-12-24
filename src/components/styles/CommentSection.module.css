@@ -71,6 +71,10 @@
   width: 73rem;
   background-color: #ffffff;
   border-radius: 1rem;
+
+  /* NOTE Allow scrolling */
+  /* max-height: 75rem;
+  overflow: auto; */
 }
 
 .numberOfComments {
@@ -81,4 +85,86 @@
   font-weight: 700;
   letter-spacing: -0.025rem;
   color: #3a4374;
+}
+
+.postComment {
+  display: flex;
+  flex-direction: column;
+  width: 73rem;
+  height: 24.6rem;
+  margin-top: 2.4rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+}
+
+.addCommentTitle {
+  color: #3a4374;
+  font-size: 1.8rem;
+  letter-spacing: -0.025rem;
+
+  margin-top: 2.4rem;
+  margin-left: 3.4rem;
+}
+
+.commentTextArea {
+  height: 8rem;
+  width: 66.4rem;
+  background-color: #f7f8fd;
+  font-size: 1.5rem;
+
+  color: #3a4374;
+  font-size: 1.5rem;
+
+  resize: none;
+  border: none;
+  border-radius: 0.5rem;
+
+  margin-top: 2.4rem;
+  margin-left: 3.4rem;
+
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  padding-top: 1.6rem;
+
+  cursor: pointer;
+}
+
+.commentTextArea:focus {
+  outline: 1px solid #4661e6;
+}
+
+.btnSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 1.6rem;
+  margin-left: 3.4rem;
+  margin-right: 3.2rem;
+}
+
+.leftCharacters {
+  color: #647196;
+  font-size: 1.5rem;
+}
+
+.btnPostComment {
+  background-color: #ad1fea;
+}
+
+.btnPostComment:hover {
+  background-color: #c75af6;
+  cursor: pointer;
+}
+
+.textErrorMessage {
+  position: absolute;
+  font-size: 1.4rem;
+  color: #d73737;
+  margin-left: 4.2rem;
+  margin-top: 0.4rem;
+}
+
+.inputError {
+  outline: 1px solid #d73737;
 }
