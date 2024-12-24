@@ -5,15 +5,15 @@ export default function FeedbackUnit({
   selectedCategory,
   selectedSortOption,
   feedbackDataArray,
-  setItemToEdit,
   handleLikeClicks,
   setCommentSectionView,
   setItemToComment,
-  itemToComment,
   countComments,
 }) {
   function itemComment(item) {
-    setItemToComment(item);
+    setItemToComment(
+      feedbackDataArray.find((data) => data.index === item.index)
+    );
     setCommentSectionView(true);
   }
 

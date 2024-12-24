@@ -102,6 +102,7 @@ export default function CommentSection({
           setFeedbackDataArray={setFeedbackDataArray}
           currentUser={currentUser}
           itemToComment={itemToComment}
+          currentItem={currentItem}
         />
       </div>
       <div className={styles.postComment}>

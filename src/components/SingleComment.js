@@ -9,14 +9,11 @@ export default function SingleComment({
   currentUser,
   data,
   itemToComment,
+  currentItem,
 }) {
   const [replyField, setReplyField] = useState(false);
   const [isCommentEmpty, setIsCommentEmpty] = useState(false);
   const [newReply, setNewReply] = useState("");
-
-  const currentItem = feedbackDataArray.find(
-    (item) => item.index === itemToComment.index
-  );
 
   const highlightText = (text) => {
     const parts = text.split(/(@\w+)/g); // Split text by words starting with @
@@ -31,7 +28,23 @@ export default function SingleComment({
     );
   };
 
-  function handleSubmit(e, secondArgument) {
+  const getNextId = (commentsArray) => {
+    let maxId = 0;
+    const traverseComments = (comments) => {
+      comments.forEach((comment) => {
+        if (comment.id > maxId) {
+          maxId = comment.id;
+        }
+        if (comment.commentsArray && comment.commentsArray.length > 0) {
+          traverseComments(comment.commentsArray);
+        }
+      });
+    };
+    traverseComments(commentsArray);
+    return maxId + 1;
+  };
+
+  function handleSubmit(e, order) {
     e.preventDefault();
 
     let valid = true;
@@ -46,50 +59,40 @@ export default function SingleComment({
     if (valid === false) return;
 
     const newCommentObject = {
-      id: comment.commentsArray.length
-        ? comment.commentsArray[comment.commentsArray.length - 1].id + 1
-        : 1,
+      id: getNextId(currentItem.commentsArray),
       user: currentUser,
       text: newReply,
       commentsArray: [],
     };
 
-    const updateNestedComments = (commentsArray, parentId, newComment) => {
-      return commentsArray.map((c) => {
-        if (c.id === parentId) {
+    const updateComments = (commentsArray, commentId) => {
+      return commentsArray.map((comment) => {
+        if (comment.id === commentId) {
           return {
-            ...c,
-            commentsArray: [...c.commentsArray, newComment],
+            ...comment,
+            commentsArray: [...(comment.commentsArray || []), newCommentObject],
           };
-        } else if (
-          Array.isArray(c.commentsArray) &&
-          c.commentsArray.length > 0
-        ) {
+        } else {
           return {
-            ...c,
-            commentsArray: updateNestedComments(
-              c.commentsArray,
-              parentId,
-              newComment
+            ...comment,
+            commentsArray: updateComments(
+              comment.commentsArray || [],
+              commentId
             ),
           };
         }
-        return c;
       });
     };
 
-    const updatedData = {
-      ...data,
-      commentsArray: updateNestedComments(
-        data.commentsArray,
-        comment.id,
-        newCommentObject
-      ),
-    };
-
-    const updatedFeedbackDataArray = feedbackDataArray.map((item) =>
-      item.index === data.index ? updatedData : item
-    );
+    const updatedFeedbackDataArray = feedbackDataArray.map((item) => {
+      if (item.index === data.index) {
+        return {
+          ...item,
+          commentsArray: updateComments(item.commentsArray, comment.id),
+        };
+      }
+      return item;
+    });
 
     setFeedbackDataArray(updatedFeedbackDataArray);
     setNewReply(""); // Clear the input field

@@ -171,6 +171,12 @@
 
   font-size: 1.4rem;
   font-weight: 700;
+
+  cursor: pointer;
+}
+
+.postCommentBtn:hover {
+  background-color: #c75af6;
 }
 
 .inputError {

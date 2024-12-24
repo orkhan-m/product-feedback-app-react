@@ -7,6 +7,7 @@ export default function CommentReply({
   setFeedbackDataArray,
   currentUser,
   itemToComment,
+  currentItem,
 }) {
   return (
     <>
@@ -22,6 +23,7 @@ export default function CommentReply({
                 currentUser={currentUser}
                 data={data}
                 itemToComment={itemToComment}
+                currentItem={currentItem}
               />
               {comment.commentsArray.map((secondaryComments) => {
                 return (
@@ -34,6 +36,7 @@ export default function CommentReply({
                       currentUser={currentUser}
                       data={data}
                       itemToComment={itemToComment}
+                      currentItem={currentItem}
                     />
                     {secondaryComments.commentsArray.map((thirdComments) => {
                       return (
@@ -46,6 +49,7 @@ export default function CommentReply({
                             currentUser={currentUser}
                             data={data}
                             itemToComment={itemToComment}
+                            currentItem={currentItem}
                           />
                         </div>
                       );
