@@ -259,7 +259,7 @@ export default function EditFeedback({
                 className={`${styles.addFeedbackBtn} ${styles.btn}`}
                 type="submit"
               >
-                Add Feedback
+                Save Feedback
               </button>
             </div>
           </div>
