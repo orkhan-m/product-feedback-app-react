@@ -46,6 +46,8 @@ export default function EditFeedback({
     setStatusSelectDropdown(false);
     setIsTitleEmpty(false);
     setIsDetailEmpty(false);
+
+    setEditFeedbackView(false);
   }
 
   function handleSubmit(e) {

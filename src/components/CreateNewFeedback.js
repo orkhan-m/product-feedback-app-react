@@ -30,6 +30,16 @@ export default function CreateNewFeedback({
     setIsDetailEmpty(false);
   }
 
+  function clearBtn(e) {
+    e.preventDefault();
+    setTitle("");
+    setDetail("");
+    setSelectedCategory("Feature");
+    setCategorySelect(false);
+    setIsTitleEmpty(false);
+    setIsDetailEmpty(false);
+  }
+
   function cancelBtn(e) {
     e.preventDefault();
     setTitle("");
@@ -38,6 +48,8 @@ export default function CreateNewFeedback({
     setCategorySelect(false);
     setIsTitleEmpty(false);
     setIsDetailEmpty(false);
+
+    setAddFeedbackView(false);
   }
 
   function handleSubmit(e) {
@@ -180,9 +192,15 @@ export default function CreateNewFeedback({
           <div className={styles.buttonContainer}>
             <button
               className={`${styles.cancelBtn} ${styles.btn}`}
-              onClick={cancelBtn}
+              onClick={
+                detail === "" && title === "" && selectedCategory === "Feature"
+                  ? cancelBtn
+                  : clearBtn
+              }
             >
-              Cancel
+              {detail === "" && title === "" && selectedCategory === "Feature"
+                ? "Cancel"
+                : "Clear"}
             </button>
             <button
               className={`${styles.addFeedbackBtn} ${styles.btn}`}
