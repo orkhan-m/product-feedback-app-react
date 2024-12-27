@@ -12,7 +12,8 @@ export default function CommentReply({
   return (
     <>
       <div className={styles.canvas}>
-        {data.commentsArray.length > 0 &&
+        {data.commentsArray && // NOTE added to fix error with missing commentsArray
+          data.commentsArray.length > 0 &&
           data.commentsArray.map((comment) => (
             <div key={comment.id}>
               <SingleComment
@@ -25,38 +26,40 @@ export default function CommentReply({
                 itemToComment={itemToComment}
                 currentItem={currentItem}
               />
-              {comment.commentsArray.map((secondaryComments) => {
-                return (
-                  <div key={secondaryComments.id}>
-                    <SingleComment
-                      comment={secondaryComments}
-                      order={`secondary`}
-                      feedbackDataArray={feedbackDataArray}
-                      setFeedbackDataArray={setFeedbackDataArray}
-                      currentUser={currentUser}
-                      data={data}
-                      itemToComment={itemToComment}
-                      currentItem={currentItem}
-                    />
-                    {secondaryComments.commentsArray.map((thirdComments) => {
-                      return (
-                        <div key={thirdComments.id}>
-                          <SingleComment
-                            comment={thirdComments}
-                            order={`third`}
-                            feedbackDataArray={feedbackDataArray}
-                            setFeedbackDataArray={setFeedbackDataArray}
-                            currentUser={currentUser}
-                            data={data}
-                            itemToComment={itemToComment}
-                            currentItem={currentItem}
-                          />
-                        </div>
-                      );
-                    })}
-                  </div>
-                );
-              })}
+              {comment.commentsArray &&
+                comment.commentsArray.map((secondaryComments) => {
+                  return (
+                    <div key={secondaryComments.id}>
+                      <SingleComment
+                        comment={secondaryComments}
+                        order={`secondary`}
+                        feedbackDataArray={feedbackDataArray}
+                        setFeedbackDataArray={setFeedbackDataArray}
+                        currentUser={currentUser}
+                        data={data}
+                        itemToComment={itemToComment}
+                        currentItem={currentItem}
+                      />
+                      {secondaryComments.commentsArray &&
+                        secondaryComments.commentsArray.map((thirdComments) => {
+                          return (
+                            <div key={thirdComments.id}>
+                              <SingleComment
+                                comment={thirdComments}
+                                order={`third`}
+                                feedbackDataArray={feedbackDataArray}
+                                setFeedbackDataArray={setFeedbackDataArray}
+                                currentUser={currentUser}
+                                data={data}
+                                itemToComment={itemToComment}
+                                currentItem={currentItem}
+                              />
+                            </div>
+                          );
+                        })}
+                    </div>
+                  );
+                })}
             </div>
           ))}
       </div>

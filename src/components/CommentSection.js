@@ -94,7 +94,9 @@ export default function CommentSection({
       </div>
       <div className={styles.commentsBoard}>
         <p className={styles.numberOfComments}>
-          {countComments(currentItem.commentsArray)} Comments
+          {currentItem.commentsArray &&
+            countComments(currentItem.commentsArray)}{" "}
+          Comments
         </p>
         <CommentReply
           data={currentItem}

@@ -39,8 +39,8 @@
   margin-bottom: 6.8rem;
   border-radius: 1rem;
   width: 54rem;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
 }
 
 .feedbackCircle {

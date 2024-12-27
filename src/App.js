@@ -43,6 +43,7 @@ export default function App() {
     setFeedbackDataArray((prevData) =>
       prevData.filter((item) => item.index !== index)
     );
+    setCommentSectionView(false);
   }
 
   function handleLikeClicks(index) {
