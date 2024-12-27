@@ -62,7 +62,6 @@ export default function CreateNewFeedback({
     if (!valid) return;
 
     const newFeedback = {
-      // index: feedbackDataArray.length + 1,
       index: feedbackDataArray.length
         ? feedbackDataArray[feedbackDataArray.length - 1].index + 1
         : 0,
@@ -72,20 +71,12 @@ export default function CreateNewFeedback({
       comments: 0,
       category: selectedCategory,
       status: "Suggestion",
+      commentsArray: [],
     };
     onAddFeedback(newFeedback);
 
     setAddFeedbackView(false);
   }
-
-  // {
-  //   index: 6,
-  //   title: "Preview images not loading",
-  //   text: "Challenge preview images are missing when you apply a filter.",
-  //   likes: 3,
-  //   comments: 0,
-  //   category: "Bug",
-  // },
 
   return (
     <div className={styles.mainCanvas}>

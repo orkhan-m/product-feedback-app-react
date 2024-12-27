@@ -44,7 +44,7 @@ export default function SingleComment({
     return maxId + 1;
   };
 
-  function handleSubmit(e, order) {
+  function handleSubmit(e) {
     e.preventDefault();
 
     let valid = true;
