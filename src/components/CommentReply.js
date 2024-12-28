@@ -14,7 +14,7 @@ export default function CommentReply({
       <div className={styles.canvas}>
         {data.commentsArray && // NOTE added to fix error with missing commentsArray
           data.commentsArray.length > 0 &&
-          data.commentsArray.map((comment) => (
+          data.commentsArray.map((comment, index) => (
             <div key={comment.id}>
               <SingleComment
                 comment={comment}
@@ -25,6 +25,7 @@ export default function CommentReply({
                 data={data}
                 itemToComment={itemToComment}
                 currentItem={currentItem}
+                className={index !== 0 ? styles.borderTop : ""}
               />
               {comment.commentsArray &&
                 comment.commentsArray.map((secondaryComments) => {

@@ -10,6 +10,7 @@ export default function SingleComment({
   data,
   itemToComment,
   currentItem,
+  className, // Accept the className prop
 }) {
   const [replyField, setReplyField] = useState(false);
   const [isCommentEmpty, setIsCommentEmpty] = useState(false);
@@ -118,7 +119,7 @@ export default function SingleComment({
 
   return (
     <>
-      <div className={styles[`${order}UserInfoAndReply`]}>
+      <div className={`${styles[`${order}UserInfoAndReply`]} ${className}`}>
         <img
           src={`profile_pictures/${comment.user.avatar}`}
           alt="User Avatar"
