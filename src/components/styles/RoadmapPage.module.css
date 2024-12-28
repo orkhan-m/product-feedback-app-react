@@ -94,3 +94,28 @@
   margin-top: 0.4rem;
   margin-bottom: 3.2rem;
 }
+
+@media (max-width: 76.8rem) {
+  .roadmapHeader {
+    height: 11.3rem;
+    width: 68.9rem;
+  }
+
+  .column {
+    width: 22.3rem;
+  }
+
+  .mainBody {
+    gap: 1rem;
+    margin-top: 3.2rem;
+  }
+
+  .columnTitle {
+    font-size: 1.4rem;
+  }
+
+  .columnDescription {
+    margin-bottom: 2.4rem;
+    font-size: 1.6rem;
+  }
+}

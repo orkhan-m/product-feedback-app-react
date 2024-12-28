@@ -168,3 +168,25 @@
 .inputError {
   outline: 1px solid #d73737;
 }
+
+@media (max-width: 76.8rem) {
+  .feedbackUnit {
+    width: 68.9rem;
+  }
+
+  .mainBody {
+    width: 68.9rem;
+  }
+
+  .commentsBoard {
+    width: 68.9rem;
+  }
+
+  .postComment {
+    width: 68.9rem;
+  }
+
+  .commentTextArea {
+    width: 62.3rem;
+  }
+}

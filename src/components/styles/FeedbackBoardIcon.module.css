@@ -53,3 +53,23 @@
   font-size: 1.5rem;
   font-weight: 400;
 }
+
+@media (max-width: 76.8rem) {
+  .feedbackBoard {
+    position: relative;
+    height: 17.8rem;
+    width: 22.3rem;
+    background: radial-gradient(
+      128.88% 128.88% at 103.9% -10.39%,
+      #e84d70 0%,
+      #a337f6 53.09%,
+      #28a7ed 100%
+    );
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .boardText {
+    margin-top: 10.3rem;
+  }
+}

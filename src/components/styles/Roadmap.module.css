@@ -96,3 +96,15 @@
   margin-left: auto;
   margin-right: 2.4rem;
 }
+
+@media (max-width: 76.8rem) {
+  .roadmap {
+    display: flex;
+    flex-direction: column;
+    height: 17.8rem;
+    width: 22.3rem;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    margin-top: 0rem;
+  }
+}

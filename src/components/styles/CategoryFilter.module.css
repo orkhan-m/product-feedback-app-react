@@ -38,3 +38,20 @@
   background-color: #cfd7ff;
   color: #4661e6;
 }
+
+@media (max-width: 76.8rem) {
+  .categoryFilter {
+    width: 22.3rem;
+    height: 17.8rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding-top: 2.4rem;
+    padding-left: 2.4rem;
+    padding-bottom: 2.4rem;
+    margin-top: 0rem;
+  }
+}

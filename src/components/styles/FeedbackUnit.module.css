@@ -11,3 +11,9 @@
 .feedbackUnit:hover {
   box-shadow: 0.3rem 0.3rem 0.2rem #eeeeee;
 }
+
+@media (max-width: 76.8rem) {
+  .feedbackUnit {
+    width: 68.9rem;
+  }
+}

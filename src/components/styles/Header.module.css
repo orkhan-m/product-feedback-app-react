@@ -108,3 +108,20 @@
   right: 2.4rem;
   top: 1.989rem;
 }
+
+@media (max-width: 76.8rem) {
+  .navBar {
+    position: relative;
+    background-color: #373f68;
+    height: 7.2rem;
+    width: 68.9rem;
+    border-radius: 1rem;
+    display: flex;
+    /* justify-content: space-between; */
+    /* float: right; */
+  }
+
+  .btnAddFeedback {
+    margin-right: 1.2rem;
+  }
+}

@@ -89,7 +89,7 @@ export default function App() {
     return (
       <div>
         <div className="pageTop">
-          <div>
+          <div className="pageTopTablet">
             <FeedbackBoardIcon />
             <CategoryFilter
               selectedCategory={selectedCategory}

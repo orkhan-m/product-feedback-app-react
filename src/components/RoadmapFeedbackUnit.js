@@ -11,16 +11,20 @@ export default function RoadmapFeedbackUnit({
   itemEdit,
   countComments,
 }) {
-  const boxStyle = {
-    display: "flex",
-    flexDirection: "column",
-    minHeight: "27.2rem",
-    width: "35rem",
-    bordeRadius: "0.5rem",
-    marginBottom: "2.4rem",
-    backgroundColor: "#ffffff",
+  // const boxStyle = {
+  //   display: "flex",
+  //   flexDirection: "column",
+  //   minHeight: "27.2rem",
+  //   width: "35rem",
+  //   bordeRadius: "0.5rem",
+  //   marginBottom: "2.4rem",
+  //   backgroundColor: "#ffffff",
+  //   borderTop: `0.5rem solid ${color}`,
+  //   borderRadius: "0.5rem",
+  // };
+
+  const boxTopBorderColor = {
     borderTop: `0.5rem solid ${color}`,
-    borderRadius: "0.5rem",
   };
 
   const dotStyle = {
@@ -34,7 +38,11 @@ export default function RoadmapFeedbackUnit({
 
   return data.map((feedback) => {
     return (
-      <div style={boxStyle} key={feedback.index}>
+      <div
+        style={boxTopBorderColor}
+        className={styles.boxStyle}
+        key={feedback.index}
+      >
         <div className={styles.dotAndStatus}>
           <div style={dotStyle}></div>
           <span className={styles.status}>{status}</span>
