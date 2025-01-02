@@ -4,7 +4,7 @@
   width: 82.5rem;
   height: 15.1rem;
   background-color: #ffffff;
-  margin-top: 2.4rem;
+  margin-top: 2rem;
   cursor: pointer;
 }
 
@@ -15,5 +15,24 @@
 @media (max-width: 76.8rem) {
   .feedbackUnit {
     width: 68.9rem;
+    margin-top: 1.6rem;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .feedbackUnit {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    width: 32.7rem;
+    height: 20rem;
+    margin-top: 1.6rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .feedbackUnit:first-child {
+    margin-top: 3.2rem;
   }
 }

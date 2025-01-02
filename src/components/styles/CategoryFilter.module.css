@@ -55,3 +55,9 @@
     margin-top: 0rem;
   }
 }
+
+@media (max-width: 37.5rem) {
+  .categoryFilter {
+    display: none;
+  }
+}

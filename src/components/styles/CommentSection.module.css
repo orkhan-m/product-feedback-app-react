@@ -190,3 +190,76 @@
     width: 62.3rem;
   }
 }
+
+@media (max-width: 37.5rem) {
+  .feedbackUnit {
+    width: 32.7rem;
+    height: 20rem;
+  }
+
+  .mainBody {
+    width: 32.7rem;
+  }
+
+  .commentsBoard {
+    width: 32.7rem;
+  }
+
+  .commentTextArea {
+    width: 32.7rem;
+  }
+
+  .goBackText {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    height: 4rem;
+    font-size: 1.3rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  .numberOfComments {
+    margin-left: 2.3rem;
+    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .postComment {
+    width: 32.7rem;
+    height: 23.4rem;
+  }
+
+  .addCommentTitle {
+    margin-top: 2.4rem;
+    margin-left: 2.4rem;
+  }
+
+  .commentTextArea {
+    height: 8rem;
+    width: 27.9rem;
+    font-size: 1.3rem;
+    margin-top: 2.4rem;
+    margin-left: 2.4rem;
+
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  .btnSection {
+    margin-top: 1.6rem;
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+  }
+
+  .leftCharacters {
+    font-size: 1.3rem;
+  }
+
+  .textErrorMessage {
+    font-size: 1.3rem;
+    margin-left: 4.2rem;
+    margin-top: 0.4rem;
+  }
+}

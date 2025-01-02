@@ -108,3 +108,9 @@
     margin-top: 0rem;
   }
 }
+
+@media (max-width: 37.5rem) {
+  .roadmap {
+    display: none;
+  }
+}

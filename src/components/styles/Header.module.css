@@ -7,6 +7,7 @@
   width: 82.5rem;
   border-radius: 1rem;
   display: flex;
+  margin-bottom: 2.4rem;
   /* justify-content: space-between; */
   /* float: right; */
 }
@@ -123,5 +124,55 @@
 
   .btnAddFeedback {
     margin-right: 1.2rem;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .navBar {
+    height: 7.2rem;
+    width: 37.5rem;
+    border-radius: 0rem;
+    display: flex;
+    margin-bottom: 3.2rem;
+    /* justify-content: space-between; */
+    /* float: right; */
+  }
+
+  .bulbIcon {
+    display: none;
+  }
+
+  .navBarSuggestions {
+    display: none;
+  }
+
+  .sortBy {
+    font-size: 1.3rem;
+    margin-left: 2.4rem;
+  }
+
+  .sortByDisabled {
+    font-size: 1.3rem;
+    margin-left: 2.4rem;
+  }
+
+  .sortDropdown {
+    left: 2.4rem;
+    height: 17.5rem;
+    width: 20.5rem;
+  }
+
+  .sortDropdown ul li {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-left: 2.4rem;
+    font-size: 1.3rem;
+  }
+
+  .btnAddFeedback {
+    font-size: 1.3rem;
+    margin-right: 2.4rem;
+    height: 4rem;
+    width: 13.4rem;
   }
 }

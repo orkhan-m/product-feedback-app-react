@@ -47,3 +47,29 @@ html {
     margin-bottom: 4rem;
   }
 }
+
+@media (max-width: 37.5rem) {
+  html {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pageTop {
+    width: 37.5rem;
+    margin-top: 0rem;
+    display: flex;
+    flex-direction: column;
+    /* NOTE WHY line below fixed the mobile view? */
+    align-items: normal;
+    justify-content: center;
+    gap: 0rem;
+  }
+
+  .pageTopTablet {
+    display: flex;
+    gap: 0rem;
+    height: 7.2rem;
+    width: 37.5rem;
+    margin-bottom: 0rem;
+  }
+}

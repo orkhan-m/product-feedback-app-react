@@ -109,6 +109,7 @@ export default function SingleComment({
     setIsCommentEmpty(false);
   }
 
+  // TODO
   const errorText = {
     position: "absolute",
     fontSize: "1.4rem",

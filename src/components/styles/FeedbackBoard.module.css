@@ -63,3 +63,43 @@
     width: 41rem;
   }
 }
+
+@media (max-width: 37.5rem) {
+  .feedbackBoard {
+    width: 32.7rem;
+    height: 46rem;
+
+    margin-top: 3.2rem;
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+  }
+
+  .feedbackboardContent {
+    width: 27.8rem;
+    height: 30.8rem;
+  }
+
+  .feedbackBoardBlankIcon {
+    width: 10.2rem;
+    height: 10.8rem;
+  }
+
+  .feedbackboardTitle {
+    font-size: 1.8rem;
+    margin-top: 3.9rem;
+  }
+
+  .feedbackboardText {
+    font-size: 1.3rem;
+    margin-top: 1.4rem;
+    /* text-align: center; */
+  }
+
+  .btnAddFeedback {
+    font-size: 1.3rem;
+    height: 4rem;
+    width: 13.4rem;
+
+    margin-top: 2.4rem;
+  }
+}
