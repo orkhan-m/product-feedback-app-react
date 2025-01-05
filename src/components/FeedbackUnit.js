@@ -17,6 +17,13 @@ export default function FeedbackUnit({
     setCommentSectionView(true);
   }
 
+  function countTotalComments(commentsArray) {
+    if (!commentsArray) return 0;
+    return commentsArray.reduce((total, comment) => {
+      return total + 1 + countTotalComments(comment.commentsArray);
+    }, 0);
+  }
+
   return (
     <>
       {feedbackDataArray
@@ -25,14 +32,17 @@ export default function FeedbackUnit({
             selectedCategory === "All" || data.category === selectedCategory
         )
         .sort((a, b) => {
+          const aCommentsCount = countTotalComments(a.commentsArray);
+          const bCommentsCount = countTotalComments(b.commentsArray);
+
           if (selectedSortOption === "Most Upvotes") {
             return b.likes - a.likes;
           } else if (selectedSortOption === "Least Upvotes") {
             return a.likes - b.likes;
           } else if (selectedSortOption === "Most Comments") {
-            return b.comments - a.comments;
+            return bCommentsCount - aCommentsCount;
           } else if (selectedSortOption === "Least Comments") {
-            return a.comments - b.comments;
+            return aCommentsCount - bCommentsCount;
           } else {
             return 0;
           }

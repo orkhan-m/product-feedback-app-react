@@ -79,7 +79,6 @@ export default function RoadmapFeedbackUnit({
                   : { opacity: "0.5" }
               }
             >
-              {/* {feedback.comments} */}
               {countComments(feedback.commentsArray)}
             </p>
           </div>

@@ -80,7 +80,6 @@ export default function CreateNewFeedback({
       title,
       text: detail,
       likes: 0,
-      comments: 0,
       category: selectedCategory,
       status: "Suggestion",
       commentsArray: [],

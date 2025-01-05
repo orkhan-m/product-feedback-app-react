@@ -76,10 +76,10 @@ export default function EditFeedback({
       title: title,
       text: detail,
       likes: itemToEdit.likes,
-      comments: itemToEdit.comments,
       category: selectedCategory,
       status: selectedStatus,
       liked: itemToEdit.liked,
+      commentsArray: itemToEdit.commentsArray,
     };
 
     onUpdateFeedback(itemToEdit.index, editedFeedback);
