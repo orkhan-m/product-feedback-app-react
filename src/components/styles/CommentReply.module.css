@@ -16,14 +16,3 @@
   right: 3.2rem; /* Make the border 3.2rem shorter on the right side */
   border-top: 0.1rem solid #8c92b340;
 }
-
-@media (max-width: 37.5rem) {
-  .borderTop {
-    position: relative;
-    padding-top: 2.4rem;
-  }
-
-  .borderTop::before {
-    right: 2.4rem; /* Make the border 3.2rem shorter on the right side */
-  }
-}

@@ -276,3 +276,142 @@
   margin-left: 4.2rem;
   margin-top: 0.4rem;
 }
+
+@media (max-width: 37.5rem) {
+  .mainCanvas {
+    height: 78.2rem;
+    width: 32.7rem;
+    margin: auto;
+    margin-top: 3.4rem;
+  }
+
+  .goBackText {
+    font-size: 1.3rem;
+  }
+
+  .feedbackForm {
+    height: 70.8rem;
+    width: 32.7rem;
+  }
+
+  .feedbackCircle {
+    left: 2.4rem;
+    top: -2rem;
+
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .mainLabel {
+    margin-left: 2.4rem;
+    font-size: 1.8rem;
+    margin-top: 4.4rem;
+  }
+
+  .titleLabel,
+  .categoryLabel,
+  .feedbackDetailLabel {
+    font-size: 1.3rem;
+    margin-left: 2.4rem;
+    margin-top: 2.4rem;
+  }
+
+  .titleDescription,
+  .feedbackDetailDescription {
+    font-size: 1.3rem;
+    margin-left: 2.4rem;
+    margin-top: 0.3rem;
+  }
+
+  .titleInput {
+    margin-left: 2.4rem;
+    width: 27.9rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .categorySelect {
+    font-size: 1.3rem;
+    width: 27.9rem;
+    margin-left: 2.4rem;
+    margin-top: 1.6rem;
+    margin-right: 2.4rem;
+  }
+
+  .categorySelectActive {
+    font-size: 1.3rem;
+    width: 27.9rem;
+    margin-left: 2.4rem;
+    margin-top: 1.6rem;
+  }
+
+  .categorySelectText {
+    font-size: 1.3rem;
+    padding-left: 1.6rem;
+  }
+
+  .dropdownIcon {
+    margin-right: 1.6rem;
+  }
+
+  .dropdownIconReverse {
+    margin-right: 1.6rem;
+  }
+
+  .dropdown {
+    width: 27.9rem;
+    height: 20rem;
+  }
+
+  .dropdown ul li {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .tickIcon {
+    right: 1.6rem;
+    top: 1.589rem;
+  }
+
+  .feedbackDetailInput {
+    margin-left: 2.4rem;
+    height: 12rem;
+    width: 27.9rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    margin-right: 2.4rem;
+    margin-left: 2.4rem;
+    gap: 0rem;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+    margin-top: 2.4rem;
+    height: 4rem;
+    padding: 1.25rem 1.6rem 1.25rem 1.6rem;
+  }
+
+  .cancelBtn {
+    order: 2;
+    margin-top: 1.6rem;
+  }
+
+  .addFeedbackBtn {
+    order: 1;
+    margin-top: 4rem;
+  }
+
+  .textErrorMessage {
+    font-size: 1.3rem;
+    margin-left: 2.4rem;
+    margin-top: 0.4rem;
+  }
+}

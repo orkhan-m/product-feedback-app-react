@@ -99,18 +99,17 @@
 
 @media (max-width: 76.8rem) {
   .roadmap {
-    display: flex;
-    flex-direction: column;
-    height: 17.8rem;
     width: 22.3rem;
-    border-radius: 1rem;
-    background-color: #ffffff;
     margin-top: 0rem;
   }
 }
 
 @media (max-width: 37.5rem) {
   .roadmap {
-    display: none;
+    position: absolute;
+    right: 2.4rem;
+    top: 29.8rem;
+    width: 22.3rem;
+    z-index: 11;
   }
 }

@@ -1,0 +1,25 @@
+.slidingMenuMobile {
+  position: absolute;
+  display: flex;
+  margin-top: 7.2rem;
+  width: 37.5rem;
+  z-index: 10;
+  height: 100%;
+}
+
+.dimmedBackground {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 37.5rem;
+  height: 100%;
+  z-index: 9;
+}
+
+.slidingMenu {
+  background-color: #f7f8fd;
+  margin-left: 10.4rem;
+  height: 100%;
+  width: 27.1rem;
+  display: flex;
+  flex-direction: column;
+}

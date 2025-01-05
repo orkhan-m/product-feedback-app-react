@@ -43,21 +43,18 @@
   .categoryFilter {
     width: 22.3rem;
     height: 17.8rem;
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    background-color: #ffffff;
-    border-radius: 1rem;
-    padding-top: 2.4rem;
-    padding-left: 2.4rem;
-    padding-bottom: 2.4rem;
     margin-top: 0rem;
   }
 }
 
 @media (max-width: 37.5rem) {
   .categoryFilter {
-    display: none;
+    position: absolute;
+    right: 2.4rem;
+    top: 9.6rem;
+
+    height: 17.8rem;
+    width: 22.3rem;
+    z-index: 11;
   }
 }

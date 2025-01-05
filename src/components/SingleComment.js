@@ -1,5 +1,5 @@
 import styles from "./styles/SingleComment.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function SingleComment({
   comment,
@@ -15,8 +15,6 @@ export default function SingleComment({
   const [replyField, setReplyField] = useState(false);
   const [isCommentEmpty, setIsCommentEmpty] = useState(false);
   const [newReply, setNewReply] = useState("");
-
-  const [isMobileScreen, setIsMobileScreen] = useState(false);
 
   const highlightText = (text) => {
     const parts = text.split(/(@\w+)/g); // Split text by words starting with @
@@ -111,30 +109,12 @@ export default function SingleComment({
     setIsCommentEmpty(false);
   }
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 37.5rem)");
-    const handleMediaQueryChange = (e) => setIsMobileScreen(e.matches);
-
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-    setIsMobileScreen(mediaQuery.matches);
-
-    return () =>
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-  }, []);
-
-  // TODO
   const errorText = {
     position: "absolute",
     fontSize: "1.4rem",
     color: "#d73737",
     top: "8.4rem",
-    left: isMobileScreen
-      ? order === "primary"
-        ? "2.3rem"
-        : "4.7rem"
-      : order === "primary"
-      ? "10.4rem"
-      : "14.9rem",
+    left: order === "primary" ? "10.4rem" : "14.9rem",
   };
 
   return (

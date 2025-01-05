@@ -90,8 +90,8 @@
   }
 
   .boardText {
-    margin-top: 1.6rem;
-    margin-left: 2.4rem;
+    margin-top: 0rem;
+    margin-left: 0rem;
   }
 
   .boardMainText {
@@ -102,5 +102,16 @@
   .boardSecondaryText {
     font-size: 1.3rem;
     font-weight: 400;
+  }
+
+  .textAndHamburgerIcon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+    z-index: 100;
+    cursor: pointer;
   }
 }

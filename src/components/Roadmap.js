@@ -1,6 +1,10 @@
 import styles from "./styles/Roadmap.module.css";
 
-export default function Roadmap({ feedbackDataArray, setRoadmapView }) {
+export default function Roadmap({
+  feedbackDataArray,
+  setRoadmapView,
+  setIsSideMenuOpen,
+}) {
   const plannedCount = feedbackDataArray.filter(
     (data) => data.status === "Planned"
   ).length;
@@ -10,6 +14,13 @@ export default function Roadmap({ feedbackDataArray, setRoadmapView }) {
   const liveCount = feedbackDataArray.filter(
     (data) => data.status === "Live"
   ).length;
+
+  function handleViewClick() {
+    setIsSideMenuOpen(false);
+    if (feedbackDataArray.length) {
+      setRoadmapView(true);
+    }
+  }
 
   return (
     <div className={styles.roadmap}>
@@ -21,7 +32,7 @@ export default function Roadmap({ feedbackDataArray, setRoadmapView }) {
               ? styles.roadmapView
               : styles.roadmapViewDisabled
           }
-          onClick={feedbackDataArray.length ? () => setRoadmapView(true) : null}
+          onClick={handleViewClick}
         >
           View
         </button>

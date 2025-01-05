@@ -365,3 +365,185 @@
   margin-left: 4.2rem;
   margin-top: 0.4rem;
 }
+
+@media (max-width: 37.5rem) {
+  .mainCanvas {
+    height: 96.7rem;
+    width: 32.7rem;
+    margin-top: 3.4rem;
+  }
+
+  .goBackSection {
+    height: 1.9rem;
+    margin-bottom: 0%;
+  }
+
+  .goBackText {
+    font-size: 1.3rem;
+  }
+
+  .feedbackForm {
+    margin-top: 5.5rem;
+    margin-bottom: 0rem;
+    width: 32.7rem;
+  }
+
+  .feedbackCircle {
+    left: 2.4rem;
+    top: -2rem;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .mainLabel {
+    margin-left: 2.4rem;
+    font-size: 1.8rem;
+    margin-top: 4.4rem;
+  }
+
+  .titleLabel,
+  .categoryLabel,
+  .updateStatusLabel,
+  .feedbackDetailLabel {
+    font-size: 1.3rem;
+    margin-left: 2.4rem;
+    margin-top: 2.4rem;
+  }
+
+  .titleDescription,
+  .updateStatusDescription,
+  .feedbackDetailDescription {
+    font-size: 1.3rem;
+    margin-left: 2.4rem;
+    margin-top: 0.3rem;
+  }
+
+  .titleInput {
+    margin-left: 2.4rem;
+    margin-top: 1.6rem;
+    height: 4.8rem;
+    width: 27.9rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .categorySelect {
+    font-size: 1.3rem;
+    width: 27.9rem;
+    margin-left: 2.4rem;
+  }
+
+  .categorySelectActive {
+    font-size: 1.3rem;
+    width: 27.9rem;
+    margin-left: 2.4rem;
+  }
+
+  .categorySelectText {
+    color: #647196;
+    font-size: 1.3rem;
+    padding-left: 1.6rem;
+  }
+
+  .dropdownIcon {
+    margin-right: 1.6rem;
+  }
+
+  .dropdownIconReverse {
+    margin-right: 1.6rem;
+  }
+
+  .dropdown {
+    width: 27.9rem;
+    height: 20rem;
+  }
+
+  .dropdown ul li,
+  .dropdownStatus ul li {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .dropdownStatus {
+    width: 27.9rem;
+    height: 15.9rem;
+  }
+
+  .tickIcon {
+    right: 1.6rem;
+    top: 1.589rem;
+  }
+
+  .statusSelect {
+    font-size: 1.3rem;
+    width: 27.9rem;
+    margin-left: 2.4rem;
+  }
+
+  .statusSelectActive {
+    font-size: 1.3rem;
+    width: 27.9rem;
+    margin-left: 2.4rem;
+  }
+
+  .statusSelectText {
+    font-size: 1.3rem;
+    padding-left: 1.6rem;
+  }
+
+  .feedbackDetailInput {
+    margin-left: 2.4rem;
+    margin-top: 1.6rem;
+    height: 12rem;
+    width: 27.9rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    margin-top: 4rem;
+    margin-right: 2.4rem;
+    margin-left: 2.4rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  .cancelAndAddFeedbackBtnContainer {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+    margin-top: 0rem;
+    height: 4rem;
+    width: 27.9rem;
+    padding: auto 2.4rem auto 2.4rem;
+  }
+
+  .cancelBtn {
+    order: 2;
+  }
+
+  .addFeedbackBtn {
+    order: 1;
+  }
+
+  .deleteBtn {
+    order: 2;
+  }
+
+  .textErrorMessage {
+    font-size: 1.3rem;
+    margin-left: 2.4rem;
+    margin-top: 0.4rem;
+  }
+}

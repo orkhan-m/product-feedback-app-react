@@ -1,5 +1,5 @@
 import "./index.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import FeedbackBoardIcon from "./components/FeedbackBoardIcon";
 import Header from "./components/Header";
@@ -13,6 +13,7 @@ import { feedbackData, currentUser } from "./data/feedbackData";
 import { dropdownSelections } from "./data/sortDropDownSelection";
 import RoadmapPage from "./components/RoadmapPage.js";
 import CommentSection from "./components/CommentSection.js";
+import SlidingMenuMobile from "./components/SlidingMenuMobile.js";
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -28,6 +29,22 @@ export default function App() {
   const [itemToComment, setItemToComment] = useState(null);
 
   const [roadmapView, setRoadmapView] = useState(false);
+
+  // NOTE For the Mobile Screen - to be researched
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+
+  const [isMobileView, setIsMobileView] = useState(false);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 37.5rem)");
+    const handleMediaQueryChange = (e) => setIsMobileView(e.matches);
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    setIsMobileView(mediaQuery.matches);
+
+    return () =>
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+  }, []);
+  // NOTE END
 
   function addFeedback(feedback) {
     setFeedbackDataArray([...feedbackDataArray, feedback]);
@@ -80,6 +97,24 @@ export default function App() {
     );
   }
 
+  // const slidingMenu = {
+  //   position: "fixed",
+  //   top: "0rem",
+  //   right: "-30rem",
+  //   width: "30rem",
+  //   height: "100rem",
+  //   backgroundColor: "red",
+  //   background: "blue",
+  //   // transform: "translateX(100%)",
+  //   transition: "transform 0.3s ease-in-out",
+  //   zIndex: "1000",
+  // };
+
+  // const open = {
+  //   // transform: "translateX(0)",
+  //   right: "0rem",
+  // };
+
   if (
     !addFeedbackView &&
     !editFeedbackView &&
@@ -90,15 +125,25 @@ export default function App() {
       <div>
         <div className="pageTop">
           <div className="pageTopTablet">
-            <FeedbackBoardIcon />
-            <CategoryFilter
-              selectedCategory={selectedCategory}
-              handleSelection={handleSelection}
+            <FeedbackBoardIcon
+              isMobileView={isMobileView}
+              setIsSideMenuOpen={setIsSideMenuOpen}
+              isSideMenuOpen={isSideMenuOpen}
             />
-            <Roadmap
-              feedbackDataArray={feedbackDataArray}
-              setRoadmapView={setRoadmapView}
-            />
+            {isSideMenuOpen && isMobileView ? <SlidingMenuMobile /> : null}
+            {isMobileView && !isSideMenuOpen ? null : (
+              <CategoryFilter
+                selectedCategory={selectedCategory}
+                handleSelection={handleSelection}
+              />
+            )}
+            {isMobileView && !isSideMenuOpen ? null : (
+              <Roadmap
+                feedbackDataArray={feedbackDataArray}
+                setRoadmapView={setRoadmapView}
+                setIsSideMenuOpen={setIsSideMenuOpen}
+              />
+            )}
           </div>
           <div>
             <Header

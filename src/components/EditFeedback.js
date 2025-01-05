@@ -239,15 +239,14 @@ export default function EditFeedback({
             <p className={styles.textErrorMessage}>Can't be empty</p>
           )}
           <div className={styles.buttonContainer}>
-            <div>
-              <button
-                className={`${styles.deleteBtn} ${styles.btn}`}
-                type="submit"
-                onClick={handleDelete}
-              >
-                Delete
-              </button>
-            </div>
+            <button
+              className={`${styles.deleteBtn} ${styles.btn}`}
+              type="submit"
+              onClick={handleDelete}
+            >
+              Delete
+            </button>
+
             <div className={styles.cancelAndAddFeedbackBtnContainer}>
               <button
                 className={`${styles.cancelBtn} ${styles.btn}`}
