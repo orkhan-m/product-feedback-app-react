@@ -35,4 +35,8 @@
   .feedbackUnit:first-child {
     margin-top: 3.2rem;
   }
+
+  .feedbackUnit:last-child {
+    margin-bottom: 20rem;
+  }
 }
