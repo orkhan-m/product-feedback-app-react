@@ -192,3 +192,67 @@
     height: 3.2rem;
   }
 }
+
+@media (max-width: 37.5rem) {
+  .boxStyle {
+    min-height: 23.3rem;
+    width: 32.7rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .dotAndStatus {
+    margin-right: 2.4rem;
+    margin-top: 1.6rem;
+  }
+
+  .status {
+    margin-left: 0.8rem;
+    font-size: 1.3rem;
+  }
+
+  .feedbackTitle {
+    font-size: 1.3rem;
+    letter-spacing: -0.018rem;
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+    margin-top: 1.6rem;
+  }
+
+  .feedbackDescription {
+    margin-top: 0.9rem;
+    font-size: 1.3rem;
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+    min-height: 3.8rem;
+  }
+
+  .feedbackCategory {
+    margin-left: 2.4rem;
+    margin-top: 0.8rem;
+  }
+
+  .feedbackLikesAndComments {
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+    margin-top: 1.6rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .iconAndNumberOfLikes {
+    height: 3.2rem;
+  }
+
+  .iconAndNumberOfLikesLiked {
+    height: 3.2rem;
+  }
+
+  .iconAndNumberOfComments {
+    height: 3.2rem;
+  }
+
+  .iconAndNumberOfComments p {
+    font-size: 1.3rem;
+    letter-spacing: 0.018rem;
+    margin-left: 0.4rem;
+  }
+}

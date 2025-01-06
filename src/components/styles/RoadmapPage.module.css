@@ -119,3 +119,52 @@
     font-size: 1.6rem;
   }
 }
+
+@media (max-width: 37.5rem) {
+  .roadmapHeader {
+    margin-top: 0rem;
+    height: 10rem;
+    width: 37.5rem;
+    border-radius: 0rem;
+  }
+
+  .roadmapText {
+    margin-left: 2.4rem;
+  }
+
+  .goBackSection span {
+    font-size: 1.3rem;
+  }
+
+  .roadmapTitle {
+    font-size: 1.8rem;
+    margin-top: 0.3rem;
+  }
+
+  .addFeedbackButton {
+    font-size: 1.3rem;
+    margin-right: 2.4rem;
+    height: 4rem;
+    width: 13.4rem;
+  }
+
+  .mobileSelectionPanel {
+    display: flex;
+    height: 5.55rem;
+  }
+
+  .titleAndDescription {
+    align-self: flex-start;
+    margin-top: 2.4rem;
+    margin-left: 2.4rem;
+  }
+
+  .columnTitle {
+    font-size: 1.8rem;
+  }
+
+  .columnDescription {
+    font-size: 1.3rem;
+    margin-bottom: 2.4rem;
+  }
+}

@@ -97,24 +97,6 @@ export default function App() {
     );
   }
 
-  // const slidingMenu = {
-  //   position: "fixed",
-  //   top: "0rem",
-  //   right: "-30rem",
-  //   width: "30rem",
-  //   height: "100rem",
-  //   backgroundColor: "red",
-  //   background: "blue",
-  //   // transform: "translateX(100%)",
-  //   transition: "transform 0.3s ease-in-out",
-  //   zIndex: "1000",
-  // };
-
-  // const open = {
-  //   // transform: "translateX(0)",
-  //   right: "0rem",
-  // };
-
   if (
     !addFeedbackView &&
     !editFeedbackView &&
@@ -208,6 +190,7 @@ export default function App() {
         handleLikeClicks={handleLikeClicks}
         itemEdit={itemEdit}
         countComments={countComments}
+        isMobileView={isMobileView}
       />
     );
   } else if (commentSectionView) {

@@ -11,18 +11,6 @@ export default function RoadmapFeedbackUnit({
   itemEdit,
   countComments,
 }) {
-  // const boxStyle = {
-  //   display: "flex",
-  //   flexDirection: "column",
-  //   minHeight: "27.2rem",
-  //   width: "35rem",
-  //   bordeRadius: "0.5rem",
-  //   marginBottom: "2.4rem",
-  //   backgroundColor: "#ffffff",
-  //   borderTop: `0.5rem solid ${color}`,
-  //   borderRadius: "0.5rem",
-  // };
-
   const boxTopBorderColor = {
     borderTop: `0.5rem solid ${color}`,
   };
