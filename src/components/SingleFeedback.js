@@ -7,6 +7,9 @@ export default function SingleFeedback({
   data,
   handleLikeClicks,
   countComments,
+  isFromCommentSection = false,
+  feedbackUnitTitleForComment,
+  feedbackUnitTextForComment,
 }) {
   const numberOfComments = countComments(data.commentsArray);
 
@@ -34,8 +37,24 @@ export default function SingleFeedback({
           </p>
         </button>
         <div className={styles.feebackText}>
-          <h3 className={styles.feedbackUnitTitle}>{data.title}</h3>
-          <p className={styles.feedbackUnitText}>{data.text}</p>
+          <h3
+            className={
+              !isFromCommentSection
+                ? styles.feedbackUnitTitle
+                : feedbackUnitTitleForComment
+            }
+          >
+            {data.title}
+          </h3>
+          <p
+            className={
+              !isFromCommentSection
+                ? styles.feedbackUnitText
+                : feedbackUnitTextForComment
+            }
+          >
+            {data.text}
+          </p>
           <p className={styles.feedbackUnitCategory}>{data.category}</p>
         </div>
         <div className={styles.numberOfComments}>

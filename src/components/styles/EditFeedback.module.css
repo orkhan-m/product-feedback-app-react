@@ -64,10 +64,15 @@
 .mainLabel {
   display: block;
   margin-left: 4.2rem;
+  margin-right: 4.2rem;
   font-size: 2.4rem;
   font-weight: 700;
   color: #3a4374;
   margin-top: 5.2rem;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .titleLabel,
@@ -397,6 +402,7 @@
 
   .mainLabel {
     margin-left: 2.4rem;
+    margin-right: 2.4rem;
     font-size: 1.8rem;
     margin-top: 4.4rem;
   }

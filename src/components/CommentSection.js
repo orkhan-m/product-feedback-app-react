@@ -90,6 +90,9 @@ export default function CommentSection({
           data={currentItem}
           handleLikeClicks={handleLikeClicks}
           countComments={countComments}
+          isFromCommentSection={true}
+          feedbackUnitTitleForComment={styles.feedbackUnitTitle}
+          feedbackUnitTextForComment={styles.feedbackUnitText}
         />
       </div>
       <div className={styles.commentsBoard}>

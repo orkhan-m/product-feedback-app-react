@@ -15,6 +15,8 @@
   border-radius: 1rem;
   align-items: center;
   justify-content: space-evenly;
+
+  padding: 1.4rem 0.9rem 0.8rem 0.9rem;
 }
 
 .likes:hover {
@@ -37,6 +39,8 @@
   align-items: center;
   justify-content: space-evenly;
   cursor: pointer;
+
+  padding: 1.4rem 0.9rem 0.8rem 0.9rem;
 }
 
 .likes:active .increaseLikesBtn {
@@ -60,15 +64,28 @@
 
 .feebackText {
   margin-left: 4rem;
+  margin-right: 2.4rem;
 }
 
 .feedbackUnitTitle {
+  display: inline-block;
+  width: 50.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   color: #3a4374;
   font-size: 1.8rem;
   font-weight: 700;
 }
 
 .feedbackUnitText {
+  display: inline-block;
+  width: 50.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   color: #647196;
   font-size: 1.6rem;
   margin-top: 0.4rem;
@@ -89,6 +106,7 @@
   display: flex;
   margin-left: auto;
   gap: 0.8rem;
+  margin-left: auto;
 }
 
 .numberOfCommentsDigit {
@@ -101,6 +119,24 @@
   opacity: 0.5;
   font-size: 1.6rem;
   font-weight: 800;
+}
+
+@media (max-width: 76.8rem) {
+  .feebackText {
+    width: 47.6rem;
+  }
+
+  .feedbackUnitTitle {
+    width: 47.6rem;
+  }
+
+  .feedbackUnitText {
+    width: 47.6rem;
+  }
+
+  .numberOfComments {
+    margin-right: 5.2rem;
+  }
 }
 
 @media (max-width: 37.5rem) {
@@ -151,19 +187,23 @@
   }
 
   .feebackText {
+    width: 25.1rem;
     grid-column: 1 / span 2;
     grid-row: 1;
     margin-left: 0rem;
+    margin-right: 0rem;
     justify-self: start;
 
     margin-bottom: 1.6rem;
   }
 
   .feedbackUnitTitle {
+    width: 25.1rem;
     font-size: 1.3rem;
   }
 
   .feedbackUnitText {
+    width: 25.1rem;
     font-size: 1.3rem;
     margin-top: 0.9rem;
   }
@@ -172,5 +212,9 @@
     margin-top: 0.8rem;
     padding: 0.5rem 1.6rem 0.6rem 1.6rem;
     width: min-content;
+  }
+
+  .numberOfComments {
+    margin-right: 0rem;
   }
 }

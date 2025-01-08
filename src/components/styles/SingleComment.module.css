@@ -70,6 +70,9 @@
 }
 
 .primaryComment {
+  word-wrap: break-word;
+  white-space: wrap;
+
   margin-left: 10.4rem;
   margin-right: 3.2rem;
   font-size: 1.5rem;
@@ -79,6 +82,9 @@
 }
 
 .secondaryComment {
+  word-wrap: break-word;
+  white-space: wrap;
+
   margin-left: 14.9rem;
   margin-right: 3.2rem;
   font-size: 1.5rem;
@@ -88,6 +94,9 @@
 }
 
 .thirdComment {
+  word-wrap: break-word;
+  white-space: wrap;
+
   margin-left: 19.4rem;
   margin-right: 3.2rem;
   font-size: 1.5rem;

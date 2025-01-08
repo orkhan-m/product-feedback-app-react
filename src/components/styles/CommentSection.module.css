@@ -6,7 +6,7 @@
 .feedbackUnit {
   border-radius: 1rem;
   width: 73rem;
-  height: 15.1rem;
+  min-height: 15.1rem;
   background-color: #ffffff;
   margin-top: 2.4rem;
 }
@@ -169,7 +169,35 @@
   outline: 1px solid #d73737;
 }
 
+.feedbackUnitTitle {
+  width: 50.1rem;
+  word-wrap: break-word;
+  white-space: wrap;
+
+  color: #3a4374;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.feedbackUnitText {
+  width: 50.1rem;
+  word-wrap: break-word;
+  white-space: wrap;
+
+  color: #647196;
+  font-size: 1.6rem;
+  margin-top: 0.4rem;
+}
+
 @media (max-width: 76.8rem) {
+  .feedbackUnitTitle {
+    width: 47.6rem;
+  }
+
+  .feedbackUnitText {
+    width: 47.6rem;
+  }
+
   .feedbackUnit {
     width: 68.9rem;
   }
@@ -192,9 +220,20 @@
 }
 
 @media (max-width: 37.5rem) {
+  .feedbackUnitTitle {
+    width: 25.1rem;
+    font-size: 1.3rem;
+  }
+
+  .feedbackUnitText {
+    width: 25.1rem;
+    font-size: 1.3rem;
+    margin-top: 0.9rem;
+  }
+
   .feedbackUnit {
     width: 32.7rem;
-    height: 20rem;
+    min-height: 20rem;
   }
 
   .mainBody {
