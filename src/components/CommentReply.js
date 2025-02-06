@@ -9,13 +9,29 @@ export default function CommentReply({
   itemToComment,
   currentItem,
 }) {
+  const getVerticalLineStyle = (comment) => {
+    // if (comment.commentsArray && comment.commentsArray.length > 0) {
+    //   return { bottom: "4rem" }; // Adjust as needed to align with the last comment's avatar
+    // }
+    return { bottom: "4rem" };
+  };
+
   return (
     <>
       <div className={styles.canvas}>
         {data.commentsArray && // NOTE added to fix error with missing commentsArray
           data.commentsArray.length > 0 &&
           data.commentsArray.map((comment, index) => (
-            <div key={comment.id}>
+            // <div key={comment.id}>
+            // NOTE end
+            <div key={comment.id} className={styles.commentContainer}>
+              {comment.commentsArray && comment.commentsArray.length > 0 && (
+                <div
+                  className={styles.verticalLine}
+                  style={getVerticalLineStyle(comment)}
+                ></div>
+              )}
+              {/* NOTE end */}
               <SingleComment
                 comment={comment}
                 order={`primary`}

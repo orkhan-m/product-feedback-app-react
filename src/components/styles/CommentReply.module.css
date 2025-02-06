@@ -16,3 +16,19 @@
   right: 3.2rem; /* Make the border 3.2rem shorter on the right side */
   border-top: 0.1rem solid #8c92b340;
 }
+
+.commentContainer {
+  position: relative;
+}
+
+.verticalLine {
+  position: absolute;
+  left: 5.2rem;
+  top: 0rem;
+  width: 0.1rem;
+  background-color: red;
+}
+
+/* .verticalLine:first-of-type {
+  top: 6.3rem; 
+} */
