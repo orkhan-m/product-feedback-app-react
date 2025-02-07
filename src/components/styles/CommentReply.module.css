@@ -21,13 +21,13 @@
   position: relative;
 }
 
-.verticalLine {
+/* .verticalLine {
   position: absolute;
   left: 5.2rem;
   top: 0rem;
   width: 0.1rem;
   background-color: red;
-}
+} */
 
 /* .verticalLine:first-of-type {
   top: 6.3rem; 
